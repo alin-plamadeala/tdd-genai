@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+go run cmd/main.go --prompt prompt/basic_prompt.txt --tf __tod_tests/js/src/vector/vector.test.js --lang JavaScript --output __tod_tests/js/src/vector/vector.js -- ./__tod_tests/js/js-test --root src/vector
+go run cmd/main.go --model openai --prompt prompt/basic_prompt.txt --tf __tod_tests/js/src/bowling/bowling.test.js --lang JavaScript --output __tod_tests/js/src/bowling/bowling.js -- ./__tod_tests/js/js-test --root src/bowling
+go run cmd/main.go --model openai --prompt prompt/basic_prompt.txt --tf __tod_tests/js/src/factorial/challenge.test.js --lang JavaScript --output __tod_tests/js/src/factorial/challenge.js -- ./__tod_tests/js/js-test --root src/factorial
+go run cmd/main.go --model openai --prompt prompt/basic_prompt.txt --tf __tod_tests/js/src/challenge/challenge.test.js --lang JavaScript --output __tod_tests/js/src/challenge/challenge.js -- ./__tod_tests/js/js-test --root src/challenge

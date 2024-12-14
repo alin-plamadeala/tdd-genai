@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+for dir in ./__mbpp_tests_with_input/task_*; do
+  testFile="$(find "$dir"/tests_task_*.py)"
+  implFile="$(find "$dir"/solution_task_*.py)"
+  testFileName=$(basename "$testFile")
+  input="$(cat "$dir"/task_description.txt)"
+  taskNr=$(echo "$dir" | sed 's/[^0-9]*//g')
+
+  echo "Running task $taskNr"
+
+  go run cmd/main.go --model openai --prompt prompt/basic_prompt_with_input.txt --tf "$testFile" --lang Python --output "$implFile"  --input "$input" -- ./__mbpp_tests_with_input/py-test "$dir" "$testFileName"
+done

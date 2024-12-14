@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+for dir in ./__mbpp_tests_no_input_claude/task_*; do
+  testFile="$(find "$dir"/tests_task_*.py)"
+  implFile="$(find "$dir"/solution_task_*.py)"
+  testFileName=$(basename "$testFile")
+  taskNr=$(echo "$dir" | sed 's/[^0-9]*//g')
+
+  echo "Running task $taskNr"
+
+  go run cmd/main.go --model claude --prompt prompt/basic_prompt.txt --tf "$testFile" --lang Python --output "$implFile" -- ./__mbpp_tests_no_input_claude/py-test "$dir" "$testFileName"
+done
