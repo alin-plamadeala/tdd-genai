@@ -1,25 +1,23 @@
-from collections import defaultdict
-
-def count_duplic(lst):
-    if not lst:
-        return [], []
-    
+def count_duplic(numbers):
     unique_elements = []
-    counts = []
+    frequencies = []
     
-    current_element = lst[0]
-    current_count = 1
-    
-    for i in range(1, len(lst)):
-        if lst[i] == current_element:
-            current_count += 1
+    if not numbers:
+        return unique_elements, frequencies
+
+    current_element = numbers[0]
+    count = 1
+
+    for i in range(1, len(numbers)):
+        if numbers[i] == current_element:
+            count += 1
         else:
             unique_elements.append(current_element)
-            counts.append(current_count)
-            current_element = lst[i]
-            current_count = 1
-    
+            frequencies.append(count)
+            current_element = numbers[i]
+            count = 1
+
     unique_elements.append(current_element)
-    counts.append(current_count)
-    
-    return unique_elements, counts
+    frequencies.append(count)
+
+    return unique_elements, frequencies

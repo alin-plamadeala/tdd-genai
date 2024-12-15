@@ -1,2 +1,2 @@
 def is_odd(number):
-    return number % 2 != 0
+    return bool(number & 1)

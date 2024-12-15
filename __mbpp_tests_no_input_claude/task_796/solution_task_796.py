@@ -1,2 +1,2 @@
-def return_sum(dictionary):
-    return sum(dictionary.values())
+def return_sum(d):
+    return sum(d.values())

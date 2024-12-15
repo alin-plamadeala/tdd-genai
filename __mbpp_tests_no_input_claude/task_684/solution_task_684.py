@@ -1,7 +1,8 @@
 def count_Char(s, c):
     count = 0
-    for i, char in enumerate(s):
-        if char == c:
-            count += i + 1
-    count += len(s)
+    n = len(s)
+    for i in range(n):
+        for j in range(i, n):
+            if c in s[i:j+1]:
+                count += 1
     return count

@@ -1,5 +1,6 @@
 def find_First_Missing(arr, start, end):
-    expected = set(range(start, end + 2))
-    actual = set(arr)
-    missing = expected - actual
-    return min(missing) if missing else end + 1
+    num_set = set(arr)
+    for i in range(start, end + 2):
+        if i not in num_set:
+            return i
+    return end + 1

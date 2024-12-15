@@ -1,2 +1,2 @@
 def merge(lists):
-    return list(map(list, zip(*lists)))
+    return [[row[i] for row in lists] for i in range(len(lists[0]))]

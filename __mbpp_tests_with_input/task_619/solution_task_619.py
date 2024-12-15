@@ -1,5 +1,4 @@
 def move_num(s):
-    import re
-    letters = re.sub(r'\d', '', s)
-    numbers = ''.join(re.findall(r'\d+', s))
+    letters = ''.join(filter(str.isalpha, s))
+    numbers = ''.join(filter(str.isdigit, s))
     return letters + numbers

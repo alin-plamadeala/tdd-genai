@@ -1,10 +1,20 @@
 def get_ludic(n):
-    ludic = [1]
-    candidates = list(range(2, n + 1))
-    while candidates:
-        next_ludic = candidates[0]
-        if next_ludic > n:
-            break
-        ludic.append(next_ludic)
-        candidates = [candidates[i] for i in range(len(candidates)) if (i + 1) % next_ludic != 0]
-    return ludic
+    if n < 1:
+        return []
+    
+    numbers = list(range(1, n + 1))
+    ludic = []
+    
+    while numbers:
+        current = numbers.pop(0)
+        ludic.append(current)
+        
+        if current == 1:
+            continue
+            
+        to_remove = list(range(current-1, len(numbers), current))
+        
+        for i in reversed(to_remove):
+            numbers.pop(i)
+            
+    return [x for x in ludic if x <= n]

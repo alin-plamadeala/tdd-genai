@@ -1,5 +1,3 @@
-import math
-
-def round_up(number, decimals=0):
-    factor = 10 ** decimals
-    return math.ceil(number * factor) / factor
+def round_up(number, digits):
+    multiplier = 10 ** digits
+    return (int(number * multiplier) + (1 if number * multiplier % 1 > 0 else 0)) / multiplier

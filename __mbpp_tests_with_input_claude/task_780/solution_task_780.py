@@ -1,7 +1,11 @@
-def find_combinations(tuple_list):
+def find_combinations(tuples):
     result = []
-    for i in range(len(tuple_list)):
-        for j in range(i + 1, len(tuple_list)):
-            sum_tuple = (tuple_list[i][0] + tuple_list[j][0], tuple_list[i][1] + tuple_list[j][1])
-            result.append(sum_tuple)
+    n = len(tuples)
+    
+    for i in range(n):
+        for j in range(i + 1, n):
+            sum_x = tuples[i][0] + tuples[j][0]
+            sum_y = tuples[i][1] + tuples[j][1]
+            result.append((sum_x, sum_y))
+    
     return result

@@ -1,2 +1,2 @@
-def count_tuplex(tup, item):
-    return tup.count(item)
+def count_tuplex(tup, x):
+    return tup.count(x)

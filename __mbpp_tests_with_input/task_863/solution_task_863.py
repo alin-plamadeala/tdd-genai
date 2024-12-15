@@ -1,20 +1,19 @@
 def find_longest_conseq_subseq(arr, n):
     if n == 0:
         return 0
-    
-    arr = list(set(arr))
-    arr.sort()
-    
-    longest_streak = 1
-    current_streak = 1
-    
-    for i in range(1, len(arr)):
-        if arr[i] == arr[i - 1] + 1:
-            current_streak += 1
-        else:
-            longest_streak = max(longest_streak, current_streak)
+
+    unique_elements = set(arr)
+    longest_streak = 0
+
+    for num in unique_elements:
+        if num - 1 not in unique_elements:  # Start of a new sequence
+            current_num = num
             current_streak = 1
-    
-    longest_streak = max(longest_streak, current_streak)
-    
+
+            while current_num + 1 in unique_elements:
+                current_num += 1
+                current_streak += 1
+
+            longest_streak = max(longest_streak, current_streak)
+
     return longest_streak

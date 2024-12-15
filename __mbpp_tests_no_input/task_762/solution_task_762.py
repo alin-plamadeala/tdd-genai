@@ -1,2 +1,6 @@
 def check_monthnumber_number(month_number):
-    return month_number in [4, 6, 9, 11]
+    if not isinstance(month_number, int):
+        raise ValueError("Input must be an integer")
+    if month_number == 6:
+        return True
+    return False

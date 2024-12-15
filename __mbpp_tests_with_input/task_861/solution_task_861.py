@@ -1,5 +1,3 @@
-from collections import Counter
-
-def anagram_lambda(word_list, target):
-    target_count = Counter(target.replace(" ", ""))
-    return list(filter(lambda word: Counter(word.replace(" ", "")) == target_count, word_list))
+def anagram_lambda(words, target):
+    target_sorted = ''.join(sorted(target.strip()))
+    return list(filter(lambda word: ''.join(sorted(word.strip())) == target_sorted, words))

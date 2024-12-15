@@ -15,7 +15,6 @@ def find_platform(arrival, departure, n):
             platforms -= 1
             j += 1
         
-        if platforms > result:
-            result = platforms
+        result = max(result, platforms)
     
     return result

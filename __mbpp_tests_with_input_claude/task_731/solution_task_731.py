@@ -1,6 +1,6 @@
 import math
 
-def lateralsurface_cone(radius, height):
-    slant_height = math.sqrt(radius**2 + height**2)
-    lateral_surface_area = math.pi * radius * slant_height
+def lateralsurface_cone(r, h):
+    slant_height = math.sqrt(r**2 + h**2)
+    lateral_surface_area = math.pi * r * slant_height
     return lateral_surface_area

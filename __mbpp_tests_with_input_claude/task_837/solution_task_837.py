@@ -1,5 +1,9 @@
 def cube_Sum(n):
     sum = 0
-    for i in range(1, 2*n, 2):
-        sum += i**3
+    odd = 1
+    count = 0
+    while count < n:
+        sum += odd * odd * odd
+        odd += 2
+        count += 1
     return sum

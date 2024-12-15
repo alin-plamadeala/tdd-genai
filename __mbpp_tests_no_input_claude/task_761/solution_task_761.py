@@ -1,6 +1,4 @@
-import math
-
-def arc_length(radius, angle):
+def arc_length(r, angle):
     if angle > 360:
         return None
-    return (angle * math.pi / 180) * radius
+    return (3.14285714 * r * angle) / 180

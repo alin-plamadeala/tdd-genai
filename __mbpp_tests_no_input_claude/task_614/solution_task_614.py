@@ -1,2 +1,5 @@
-def cummulative_sum(lst):
-    return sum(sum(tuple) for tuple in lst)
+def cummulative_sum(tuples):
+    total = 0
+    for t in tuples:
+        total += sum(t)
+    return total

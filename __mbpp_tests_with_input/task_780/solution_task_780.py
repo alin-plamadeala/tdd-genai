@@ -1,7 +1,8 @@
-def find_combinations(pairs):
+def find_combinations(tuple_list):
     result = []
-    for i in range(len(pairs)):
-        for j in range(i + 1, len(pairs)):
-            sum_pair = (pairs[i][0] + pairs[j][0], pairs[i][1] + pairs[j][1])
-            result.append(sum_pair)
+    for i in range(len(tuple_list)):
+        for j in range(i + 1, len(tuple_list)):
+            sum1 = tuple_list[i][0] + tuple_list[j][0]
+            sum2 = tuple_list[i][1] + tuple_list[j][1]
+            result.append((sum1, sum2))
     return result

@@ -1,4 +1,4 @@
-from collections import Counter
-
 def freq_element(elements):
-    return str(dict(Counter(elements)))
+    from collections import Counter
+    frequency = Counter(elements)
+    return str(dict(frequency))

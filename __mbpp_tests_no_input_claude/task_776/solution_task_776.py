@@ -1,3 +1,7 @@
-def count_vowels(string):
-    vowels = 'aeiou'
-    return sum(1 for char in string.lower() if char in vowels)
+def count_vowels(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count

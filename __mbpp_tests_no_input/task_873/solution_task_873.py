@@ -1,12 +1,12 @@
-from functools import lru_cache
-
-@lru_cache(maxsize=None)
 def fibonacci(n):
-    if n < 0:
-        raise ValueError("Input should be a non-negative integer.")
-    elif n == 0:
-        return 0
+    if n <= 0:
+        raise ValueError("Input must be a positive integer.")
     elif n == 1:
         return 1
+    elif n == 2:
+        return 1
     else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+        a, b = 1, 1
+        for _ in range(2, n):
+            a, b = b, a + b
+        return b

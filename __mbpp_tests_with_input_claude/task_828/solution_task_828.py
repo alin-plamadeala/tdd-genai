@@ -1,5 +1,5 @@
 def count_alpha_dig_spl(s):
-    alpha = sum(c.isalpha() for c in s)
-    digit = sum(c.isdigit() for c in s)
-    special = len(s) - alpha - digit
+    alpha = sum(1 for c in s if c.isalpha())
+    digit = sum(1 for c in s if c.isdigit())
+    special = sum(1 for c in s if not c.isalnum())
     return (alpha, digit, special)

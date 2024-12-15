@@ -1,20 +1,12 @@
 def Diff(list1, list2):
-    result = []
+    # Create sets for faster lookup
+    set1 = set(list1)
+    set2 = set(list2)
     
-    # Add elements from list1 that are not in list2, maintaining order
-    for item in list1:
-        if item not in list2:
-            result.append(item)
+    # Find elements in list1 but not in list2, preserving order
+    diff1 = [x for x in list1 if x not in set2]
+    # Find elements in list2 but not in list1, preserving order
+    diff2 = [x for x in list2 if x not in set1]
     
-    # Add elements from list2 that are not in list1, maintaining order
-    for item in list2:
-        if item not in list1:
-            result.append(item)
-    
-    # Reorder result based on the order of first appearance in the original lists
-    ordered_result = []
-    for item in list1 + list2:
-        if item in result and item not in ordered_result:
-            ordered_result.append(item)
-    
-    return ordered_result
+    # Combine the two lists while preserving order
+    return diff1 + diff2

@@ -1,12 +1,7 @@
 def count_reverse_pairs(words):
-    reverse_pairs_count = 0
-    word_set = set(words)
-    
+    count = 0
     for word in words:
         reversed_word = word[::-1]
-        if reversed_word in word_set and reversed_word != word:
-            reverse_pairs_count += 1
-            word_set.remove(reversed_word)
-            word_set.remove(word)
-    
-    return str(reverse_pairs_count)
+        if reversed_word in words and reversed_word != word:
+            count += 1
+    return str(count // 2)

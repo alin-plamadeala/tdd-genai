@@ -2,7 +2,7 @@ def sort_by_dnf(arr, n):
     low = 0
     mid = 0
     high = n - 1
-
+    
     while mid <= high:
         if arr[mid] == 0:
             arr[low], arr[mid] = arr[mid], arr[low]
@@ -13,5 +13,5 @@ def sort_by_dnf(arr, n):
         else:
             arr[mid], arr[high] = arr[high], arr[mid]
             high -= 1
-
+            
     return arr

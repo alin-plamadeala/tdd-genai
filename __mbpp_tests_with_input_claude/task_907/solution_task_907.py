@@ -1,15 +1,13 @@
 def lucky_num(n):
-    if n <= 0:
-        return []
-    
-    numbers = list(range(1, n * 10, 2))
-    idx = 1
-    
-    while idx < len(numbers):
-        step = numbers[idx]
-        if step >= len(numbers):
+    numbers = list(range(1, 1000, 2))
+    i = 1
+    while i < len(numbers):
+        step = numbers[i]
+        j = step - 1
+        while j < len(numbers):
+            numbers.pop(j)
+            j += step - 1
+        i += 1
+        if len(numbers) < n:
             break
-        numbers = [num for i, num in enumerate(numbers) if (i + 1) % step != 0]
-        idx += 1
-    
     return numbers[:n]

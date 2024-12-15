@@ -8,5 +8,5 @@ for dir in ./__mbpp_tests_no_input_claude/task_*; do
 
   echo "Running task $taskNr"
 
-  go run cmd/main.go --model claude --prompt prompt/basic_prompt.txt --tf "$testFile" --lang Python --output "$implFile" -- ./__mbpp_tests_no_input_claude/py-test "$dir" "$testFileName"
+  go run cmd/main.go --model claude --prompt prompt/basic_prompt.txt --tf "$testFile" --lang Python --output "$implFile" --dataDir ./data_no_input_claude --log "./data_no_input_claude/log_$taskNr" -- ./__mbpp_tests_no_input_claude/py-test "$dir" "$testFileName"
 done

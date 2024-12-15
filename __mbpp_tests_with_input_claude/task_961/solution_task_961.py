@@ -1,5 +1,5 @@
 def roman_to_int(s):
-    roman_values = {
+    values = {
         'I': 1,
         'V': 5,
         'X': 10,
@@ -13,11 +13,11 @@ def roman_to_int(s):
     prev_value = 0
     
     for char in reversed(s):
-        current_value = roman_values[char]
-        if current_value >= prev_value:
-            total += current_value
+        curr_value = values[char]
+        if curr_value >= prev_value:
+            total += curr_value
         else:
-            total -= current_value
-        prev_value = current_value
-    
+            total -= curr_value
+        prev_value = curr_value
+        
     return total

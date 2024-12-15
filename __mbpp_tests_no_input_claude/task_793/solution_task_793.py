@@ -1,8 +1,8 @@
 def last(arr, x, n):
-    count = 0
-    last_index = -1
+    last_pos = -1
+    
     for i in range(min(n, len(arr))):
         if arr[i] == x:
-            count += 1
-            last_index = i
-    return last_index
+            last_pos = i
+            
+    return 0 if last_pos == -1 else last_pos

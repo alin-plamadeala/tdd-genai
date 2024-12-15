@@ -1,7 +1,7 @@
-def is_Product_Even(lst, n):
-    if n > len(lst):
+def is_Product_Even(numbers, n):
+    if len(numbers) != n:
         return False
-    product = 1
-    for i in range(n):
-        product *= lst[i]
-    return product % 2 == 0
+    for num in numbers:
+        if num % 2 == 0:
+            return True
+    return False

@@ -1,8 +1,3 @@
 def re_arrange_tuples(tuples, order):
-    result = []
-    for value in order:
-        for t in tuples:
-            if t[0] == value:
-                result.append(t)
-                break
-    return result
+    lookup = {t[0]: t for t in tuples}
+    return [lookup[x] for x in order]

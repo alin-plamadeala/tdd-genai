@@ -1,2 +1,2 @@
 def sum_positivenum(numbers):
-    return sum(num for num in numbers if num > 0)
+    return sum(filter(lambda x: x > 0, numbers))

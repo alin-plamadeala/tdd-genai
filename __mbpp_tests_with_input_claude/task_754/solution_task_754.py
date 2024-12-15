@@ -1,9 +1,14 @@
 def extract_index_list(list1, list2, list3):
-    common_indices = [i for i in list2 if i in list3]
-    valid_common_indices = [i for i in common_indices if i < len(list1)]
-    if not valid_common_indices:
+    start = -1
+    end = -1
+    
+    for i in range(len(list1)):
+        if list1[i] != list2[i] or list1[i] != list3[i] or list2[i] != list3[i]:
+            if start == -1:
+                start = i
+            end = i + 1
+            
+    if start == -1:
         return []
-    first_index = valid_common_indices[0]
-    last_index = valid_common_indices[-1]
-    result = [list1[first_index], list1[last_index]]
-    return result
+        
+    return [start, end]

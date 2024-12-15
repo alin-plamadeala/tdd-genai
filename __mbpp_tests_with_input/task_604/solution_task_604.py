@@ -1,2 +1,2 @@
-def reverse_words(s):
-    return ' '.join(s.split()[::-1])
+def reverse_words(input_string):
+    return " ".join(input_string.split()[::-1])

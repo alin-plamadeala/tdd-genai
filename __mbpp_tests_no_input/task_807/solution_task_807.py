@@ -1,5 +1,5 @@
 def first_odd(numbers):
-    for number in numbers:
-        if number % 2 != 0:
-            return number
+    for num in numbers:
+        if num % 2 != 0:
+            return num
     return None

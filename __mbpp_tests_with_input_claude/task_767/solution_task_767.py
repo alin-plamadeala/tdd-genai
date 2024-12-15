@@ -1,8 +1,7 @@
 def get_Pairs_Count(arr, n, sum):
     count = 0
-    freq = {}
-    for num in arr:
-        if sum - num in freq:
-            count += freq[sum - num]
-        freq[num] = freq.get(num, 0) + 1
+    for i in range(n):
+        for j in range(i + 1, n):
+            if arr[i] + arr[j] == sum:
+                count += 1
     return count

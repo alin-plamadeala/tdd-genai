@@ -1,7 +1,11 @@
 def count_variable(p, q, r, s):
     result = []
-    result.extend(['p'] * p)
-    result.extend(['q'] * q)
-    result.extend(['r'] * r)
-    result.extend(['s'] * s)
+    if p > 0:
+        result.extend(['p'] * p)
+    if q > 0:
+        result.extend(['q'] * q)
+    if r > 0:
+        result.extend(['r'] * r)
+    if s > 0:
+        result.extend(['s'] * s)
     return result

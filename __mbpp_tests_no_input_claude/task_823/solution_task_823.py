@@ -1,5 +1,4 @@
-def check_substring(main_string, substring):
-    if main_string.startswith(substring):
+def check_substring(text: str, substring: str) -> str:
+    if text.startswith(substring):
         return 'string starts with the given substring'
-    else:
-        return 'string doesnt start with the given substring'
+    return 'string doesnt start with the given substring'

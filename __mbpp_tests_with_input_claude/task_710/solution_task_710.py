@@ -1,2 +1,2 @@
-def front_and_rear(tuple_record):
-    return (tuple_record[0], tuple_record[-1])
+def front_and_rear(tup):
+    return (tup[0], tup[-1])

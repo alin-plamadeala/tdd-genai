@@ -1,12 +1,12 @@
-def right_insertion(arr, x):
+def right_insertion(arr, target):
     left = 0
     right = len(arr)
     
     while left < right:
         mid = (left + right) // 2
-        if x > arr[mid]:
-            left = mid + 1
-        else:
+        if mid == len(arr) or target <= arr[mid]:
             right = mid
-    
+        else:
+            left = mid + 1
+            
     return left

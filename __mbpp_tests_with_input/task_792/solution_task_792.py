@@ -1,2 +1,2 @@
-def count_list(nested_list):
-    return len(nested_list)
+def count_list(nested_lists):
+    return len(nested_lists)

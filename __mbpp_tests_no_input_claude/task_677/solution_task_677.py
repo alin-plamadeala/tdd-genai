@@ -1,2 +1,4 @@
 def validity_triangle(a, b, c):
-    return a + b + c == 180 and 0 < a < 180 and 0 < b < 180 and 0 < c < 180
+    if a + b + c == 180 and a > 0 and b > 0 and c > 0:
+        return True
+    return False

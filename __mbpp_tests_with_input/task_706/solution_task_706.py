@@ -1,4 +1,6 @@
 def is_subset(arr1, n, arr2, m):
-    set1 = set(arr1)
-    set2 = set(arr2)
-    return set2.issubset(set1)
+    set_arr1 = set(arr1)
+    for element in arr2:
+        if element not in set_arr1:
+            return False
+    return True

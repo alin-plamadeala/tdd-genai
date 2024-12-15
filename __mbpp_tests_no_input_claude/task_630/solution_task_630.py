@@ -1,7 +1,7 @@
-def get_coordinates(center):
-    x, y = center
-    return [
-        [x-1, y-1], [x-1, y], [x-1, y+1],
-        [x, y-1], [x, y], [x, y+1],
-        [x+1, y-1], [x+1, y], [x+1, y+1]
-    ]
+def get_coordinates(point):
+    x, y = point
+    coordinates = []
+    for i in range(x-1, x+2):
+        for j in range(y-1, y+2):
+            coordinates.append([i, j])
+    return coordinates

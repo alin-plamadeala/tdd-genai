@@ -2,12 +2,9 @@ def second_smallest(numbers):
     if len(numbers) < 2:
         return None
     
-    first, second = float('inf'), float('inf')
+    unique_numbers = list(set(numbers))
+    if len(unique_numbers) < 2:
+        return None
     
-    for number in numbers:
-        if number < first:
-            first, second = number, first
-        elif first < number < second:
-            second = number
-    
-    return second if second != float('inf') else None
+    unique_numbers.sort()
+    return unique_numbers[1]

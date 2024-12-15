@@ -1,4 +1,4 @@
-def move_zero(nums):
-    non_zero = [num for num in nums if num != 0]
-    zeros = [0] * (len(nums) - len(non_zero))
+def move_zero(lst):
+    non_zero = [x for x in lst if x != 0]
+    zeros = [0] * (len(lst) - len(non_zero))
     return non_zero + zeros

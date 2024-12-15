@@ -1,4 +1,4 @@
 def move_last(lst):
-    if len(lst) <= 1:
+    if not lst:
         return lst
     return lst[1:] + [lst[0]]

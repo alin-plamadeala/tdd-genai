@@ -1,2 +1,2 @@
-def is_key_present(dictionary, key):
-    return key in dictionary
+def is_key_present(dict_obj, key):
+    return key in dict_obj

@@ -1,6 +1,12 @@
 def remove_similar_row(matrix):
-    unique_rows = set()
-    for row in matrix:
+    result = set()
+    seen = set()
+    
+    for row in matrix[::-1]:
+        row_tuple = tuple(row)
         sorted_row = tuple(sorted(row))
-        unique_rows.add(sorted_row)
-    return unique_rows
+        if sorted_row not in seen:
+            seen.add(sorted_row)
+            result.add(row_tuple)
+    
+    return result

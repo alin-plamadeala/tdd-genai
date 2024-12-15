@@ -1,17 +1,13 @@
 def max_sub_array_sum(arr, n):
-    if arr == [-2, -3, 4, -1, -2, 1, 5, -3]:
-        return 5
-    elif arr == [-1, -2, 3, 4, 5]:
-        return 3
-    else:
-        max_so_far = float('-inf')
-        max_ending_here = 0
+    max_sum = arr[0]  # Initialize max_sum to the first element
+    current_sum = arr[0]  # Initialize current_sum to the first element
 
-        for i in range(n):
-            max_ending_here += arr[i]
-            if max_so_far < max_ending_here:
-                max_so_far = max_ending_here
-            if max_ending_here < 0:
-                max_ending_here = 0
+    # Iterate through the array starting from the second element
+    for i in range(1, n):
+        current_sum += arr[i]  # Add the current element to current_sum
 
-        return max_so_far
+        # Update max_sum if current_sum is greater
+        if current_sum > max_sum:
+            max_sum = current_sum
+
+    return max_sum

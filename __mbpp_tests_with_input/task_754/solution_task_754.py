@@ -1,7 +1,7 @@
 def extract_index_list(list1, list2, list3):
-    common_indices = set(list2).intersection(list3)
-    valid_indices = [i for i in common_indices if i < len(list1)]
-    if not valid_indices:
-        return []
-    sorted_indices = sorted(valid_indices)
-    return [list1[sorted_indices[0]], list1[sorted_indices[-1]]]
+    # Find indices in list2 where the value is present in list3 and also matches the index in list3
+    matching_indices = [i for i, val in enumerate(list2) if i < len(list3) and val == list3[i]]
+    
+    # Extract elements from list1 using the filtered indices
+    result = [list1[i] for i in matching_indices]
+    return result

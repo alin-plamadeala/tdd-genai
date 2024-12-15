@@ -1,16 +1,13 @@
-def join_tuples(tuples_list):
-    if not tuples_list:
-        return []
-
+def join_tuples(tuples):
     result = []
-    current_tuple = list(tuples_list[0])
+    current_group = [tuples[0][0]]
 
-    for i in range(1, len(tuples_list)):
-        if tuples_list[i][0] == current_tuple[0]:
-            current_tuple.append(tuples_list[i][1])
+    for i in range(len(tuples)):
+        if i == 0 or tuples[i][0] == tuples[i - 1][0]:
+            current_group.append(tuples[i][1])
         else:
-            result.append(tuple(current_tuple))
-            current_tuple = list(tuples_list[i])
+            result.append(tuple(current_group))
+            current_group = [tuples[i][0], tuples[i][1]]
 
-    result.append(tuple(current_tuple))
+    result.append(tuple(current_group))
     return result

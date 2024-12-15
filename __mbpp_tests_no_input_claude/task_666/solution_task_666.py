@@ -1,2 +1,2 @@
-def count_char(string, char):
-    return string.count(char)
+def count_char(text, char):
+    return text.count(char)

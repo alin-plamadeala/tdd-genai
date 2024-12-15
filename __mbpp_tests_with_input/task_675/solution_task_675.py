@@ -1,5 +1,5 @@
 def sum_nums(a, b, lower, upper):
-    total = a + b
-    if lower <= total <= upper:
+    result = a + b
+    if lower <= result <= upper:
         return 20
-    return total
+    return result

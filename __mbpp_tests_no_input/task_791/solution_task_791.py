@@ -1,8 +1,2 @@
-from typing import Tuple, Any
-
-def remove_nested(t: Tuple[Any, ...]) -> Tuple[Any, ...]:
-    result = []
-    for item in t:
-        if not isinstance(item, tuple):
-            result.append(item)
-    return tuple(result)
+def remove_nested(input_tuple):
+    return tuple(item for item in input_tuple if not isinstance(item, tuple))

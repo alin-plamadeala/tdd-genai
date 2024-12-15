@@ -1,8 +1,16 @@
 def get_noOfways(n):
-    if n == 3:
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
         return 2
-    elif n == 4:
-        return 3
-    elif n == 5:
-        return 5
-    return 0
+
+    ways = [0] * (n + 1)
+    ways[1] = 1
+    ways[2] = 2
+
+    for i in range(3, n + 1):
+        ways[i] = ways[i - 1] + ways[i - 3]
+
+    return ways[n]

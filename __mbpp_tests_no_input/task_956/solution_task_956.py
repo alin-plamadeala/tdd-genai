@@ -1,4 +1,5 @@
 import re
 
 def split_list(input_string):
-    return re.findall(r'[A-Z][a-z]*[^A-Za-z]*|[A-Z]+(?=[A-Z][a-z])|[A-Z][a-z]*', input_string)
+    # Match words in camel case and ensure special characters are attached to the preceding word
+    return re.findall(r'[A-Z][a-z]*(?:\W*[a-z]*)*', input_string)

@@ -1,4 +1,2 @@
-from re import sub
-
-def remove_extra_char(s):
-    return sub(r'[^a-zA-Z0-9]', '', s)
+def remove_extra_char(input_str):
+    return ''.join(filter(str.isalnum, input_str))

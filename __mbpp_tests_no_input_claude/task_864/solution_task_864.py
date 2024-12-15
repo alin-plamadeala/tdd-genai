@@ -1,2 +1,2 @@
-def palindrome_lambda(strings):
-    return list(filter(lambda x: x == x[::-1], strings))
+def palindrome_lambda(lst):
+    return list(filter(lambda x: x == x[::-1], lst))

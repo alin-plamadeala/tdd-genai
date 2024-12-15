@@ -1,4 +1,4 @@
-def check(s):
-    vowels = set('aeiou')
-    s_lower = s.lower()
-    return 'accepted' if vowels.issubset(s_lower) else 'not accepted'
+def check(input_string):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    input_vowels = set(char.lower() for char in input_string if char.lower() in vowels)
+    return 'accepted' if vowels.issubset(input_vowels) else 'not accepted'

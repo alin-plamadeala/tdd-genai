@@ -1,6 +1,9 @@
-def check_tuples(tup, lst):
-    lst_sorted = sorted(lst)
-    for i in range(len(tup) - len(lst) + 1):
-        if sorted(tup[i:i+len(lst)]) == lst_sorted:
-            return True
-    return False
+def check_tuples(input_tuple, elements_list):
+    if len(input_tuple) != len(elements_list) * 2:
+        return False
+    
+    for element in elements_list:
+        if input_tuple.count(element) != 2:
+            return False
+    
+    return True

@@ -1,11 +1,15 @@
 def max_similar_indices(list1, list2):
-    def sum_of_pairs(pair):
-        return pair[0] + pair[1]
-    
-    max_sum_list1 = max(list1, key=sum_of_pairs)
-    max_sum_list2 = max(list2, key=sum_of_pairs)
-    
-    if sum_of_pairs(max_sum_list1) > sum_of_pairs(max_sum_list2):
-        return list1
-    else:
-        return list2
+    def similarity_score(pair1, pair2):
+        return abs(pair1[0] - pair2[0]) + abs(pair1[1] - pair2[1])
+
+    result = []
+    for pair2 in list2:
+        min_score = float('inf')
+        best_match = None
+        for pair1 in list1:
+            score = similarity_score(pair1, pair2)
+            if score < min_score:
+                min_score = score
+                best_match = pair2
+        result.append(best_match)
+    return result

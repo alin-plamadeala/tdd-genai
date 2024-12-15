@@ -1,2 +1,2 @@
-def remove_spaces(s):
-    return s.replace(" ", "")
+def remove_spaces(input_string):
+    return input_string.replace(" ", "")

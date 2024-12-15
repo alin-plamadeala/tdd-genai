@@ -1,2 +1,2 @@
-def sort_String(s):
+def sort_String(s: str) -> str:
     return ''.join(sorted(s))

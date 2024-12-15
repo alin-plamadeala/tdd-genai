@@ -1,9 +1,7 @@
-from math import gcd
-
-def check_Concat(s, t):
-    if not s or not t:
+def check_Concat(s, sub):
+    if not sub:  # Handle edge case where sub is an empty string
         return False
-    if len(s) % len(t) != 0:
+    if len(s) % len(sub) != 0:  # If s is not a multiple of sub's length, it can't be a concatenation
         return False
-    repeat_count = len(s) // len(t)
-    return s == t * repeat_count
+    repeated = sub * (len(s) // len(sub))  # Repeat sub to match the length of s
+    return repeated == s

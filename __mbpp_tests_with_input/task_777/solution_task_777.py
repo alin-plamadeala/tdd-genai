@@ -1,6 +1,4 @@
-def find_Sum(arr, n):
-    unique_elements = []
-    for num in arr:
-        if num not in unique_elements:
-            unique_elements.append(num)
-    return sum(unique_elements[:n])
+def find_Sum(arr, target):
+    from collections import Counter
+    element_counts = Counter(arr)
+    return sum(num * count for num, count in element_counts.items() if count == target)

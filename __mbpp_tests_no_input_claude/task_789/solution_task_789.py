@@ -1,2 +1,2 @@
-def perimeter_polygon(sides, length):
-    return sides * length
+def perimeter_polygon(n, side):
+    return n * side

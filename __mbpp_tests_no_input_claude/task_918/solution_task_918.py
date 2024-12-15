@@ -1,16 +1,9 @@
-def coin_change(coins, n, amount):
-    dp = [0] + [float('inf')] * amount
-    for coin in coins:
-        for i in range(coin, amount + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
-    return dp[amount] if dp[amount] != float('inf') else 0
-
-def combinations(coins, n, amount):
-    dp = [1] + [0] * amount
-    for coin in coins:
-        for i in range(coin, amount + 1):
-            dp[i] += dp[i - coin]
-    return dp[amount]
-
-def coin_change(coins, n, amount):
-    return combinations(coins, n, amount)
+def coin_change(coins, m, n):
+    dp = [0] * (n + 1)
+    dp[0] = 1
+    
+    for i in range(m):
+        for j in range(coins[i], n + 1):
+            dp[j] += dp[j - coins[i]]
+            
+    return dp[n]

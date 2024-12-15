@@ -1,11 +1,15 @@
 def check_IP(ip_address):
-    octets = ip_address.split('.')
-    if len(octets) != 4:
+    parts = ip_address.split('.')
+    
+    if len(parts) != 4:
         return 'Invalid IP address'
-    for octet in octets:
-        if not octet.isdigit():
+        
+    for part in parts:
+        try:
+            num = int(part)
+            if num < 0 or num > 255:
+                return 'Invalid IP address'
+        except ValueError:
             return 'Invalid IP address'
-        value = int(octet)
-        if value < 0 or value > 255:
-            return 'Invalid IP address'
+            
     return 'Valid IP address'

@@ -2,7 +2,7 @@ def find_combinations(pairs):
     result = []
     for i in range(len(pairs)):
         for j in range(i + 1, len(pairs)):
-            sum_x = pairs[i][0] + pairs[j][0]
-            sum_y = pairs[i][1] + pairs[j][1]
-            result.append((sum_x, sum_y))
+            x1, y1 = pairs[i]
+            x2, y2 = pairs[j]
+            result.append((x1 + x2, y1 + y2))
     return result

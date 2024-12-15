@@ -1,26 +1,13 @@
 def max_product(arr):
     if len(arr) < 2:
-        return None
-
-    max1 = max(arr[0], arr[1])
-    max2 = min(arr[0], arr[1])
-    min1 = max2
-    min2 = max1
-
-    for num in arr[2:]:
-        if num > max1:
-            max2 = max1
-            max1 = num
-        elif num > max2:
-            max2 = num
-
-        if num < min1:
-            min2 = min1
-            min1 = num
-        elif num < min2:
-            min2 = num
-
-    if max1 * max2 > min1 * min2:
-        return (max2, max1)
+        raise ValueError("Array must contain at least two elements")
+    
+    arr.sort()
+    
+    product1 = arr[-1] * arr[-2]
+    product2 = arr[0] * arr[1]
+    
+    if product1 > product2:
+        return (min(arr[-1], arr[-2]), max(arr[-1], arr[-2]))
     else:
-        return (min2, min1)
+        return (min(arr[0], arr[1]), max(arr[0], arr[1]))

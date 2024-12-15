@@ -1,14 +1,15 @@
-from functools import lru_cache
+def super_seq(str1, str2, m, n):
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
 
-def super_seq(X, Y, m, n):
-    @lru_cache(None)
-    def lcs(i, j):
-        if i == 0:
-            return j
-        if j == 0:
-            return i
-        if X[i-1] == Y[j-1]:
-            return 1 + lcs(i-1, j-1)
-        return 1 + min(lcs(i-1, j), lcs(i, j-1))
-    
-    return lcs(m, n)
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0:
+                dp[i][j] = j
+            elif j == 0:
+                dp[i][j] = i
+            elif str1[i - 1] == str2[j - 1]:
+                dp[i][j] = 1 + dp[i - 1][j - 1]
+            else:
+                dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1])
+
+    return dp[m][n]

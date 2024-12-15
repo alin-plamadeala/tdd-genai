@@ -1,2 +1,5 @@
 def even_position(lst):
-    return any(x % 2 == 0 for i, x in enumerate(lst) if i % 2 == 0)
+    for i in range(len(lst)):
+        if i % 2 == 0 and lst[i] % 2 == 0:
+            return True
+    return False

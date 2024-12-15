@@ -1,16 +1,7 @@
 def matrix_to_list(matrix):
-    if not matrix or not matrix[0]:
-        return '[]'
-    
-    first_elements = []
-    second_elements = []
-    
-    for row in matrix:
-        first_elements.append(row[0][0])
-        second_elements.append(row[0][1])
-        first_elements.append(row[1][0])
-        second_elements.append(row[1][1])
-    
-    result = [tuple(first_elements), tuple(second_elements)]
-    
-    return str(result)
+    # Extract the first elements of the tuples column-wise
+    first_list = tuple(matrix[row][col][0] for col in range(len(matrix[0])) for row in range(len(matrix)))
+    # Extract the second elements of the tuples column-wise
+    second_list = tuple(matrix[row][col][1] for col in range(len(matrix[0])) for row in range(len(matrix)))
+    # Return the result as a formatted string
+    return f'[{first_list}, {second_list}]'

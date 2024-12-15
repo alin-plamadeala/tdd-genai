@@ -1,4 +1,4 @@
-def move_zero(lst):
-    non_zero_elements = [x for x in lst if x != 0]
-    zero_count = lst.count(0)
-    return non_zero_elements + [0] * zero_count
+def move_zero(arr):
+    non_zeroes = [x for x in arr if x != 0]
+    zeroes = [0] * (len(arr) - len(non_zeroes))
+    return non_zeroes + zeroes

@@ -1,2 +1,2 @@
-def nth_nums(lst, n):
-    return [x ** n for x in lst]
+def nth_nums(nums, n):
+    return [x ** n for x in nums]

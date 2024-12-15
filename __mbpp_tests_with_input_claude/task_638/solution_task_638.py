@@ -1,2 +1,2 @@
-def wind_chill(temperature, wind_speed):
-    return int(round(temperature - wind_speed + 100))
+def wind_chill(temperature, humidity):
+    return int((humidity * 1.1) + (temperature * 0.1))

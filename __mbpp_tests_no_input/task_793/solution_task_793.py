@@ -1,10 +1,17 @@
-def last(arr, x, n):
-    occurrences = 0
-    last_index = -1
-    for index in range(len(arr)):
-        if arr[index] == x:
-            occurrences += 1
-            last_index = index
-            if occurrences == n:
-                return index
-    return last_index if occurrences > 0 else 0
+def last(arr, x, y):
+    # Find the last occurrence of x in the array
+    last_x = len(arr) - 1 - arr[::-1].index(x) if x in arr else -1
+    
+    # Find the last occurrence of y in the array
+    last_y = len(arr) - 1 - arr[::-1].index(y) if y in arr else -1
+    
+    # If either x or y is not found, return 0
+    if last_x == -1 or last_y == -1:
+        return 0
+    
+    # If x and y are the same, return 0
+    if last_x == last_y:
+        return 0
+    
+    # Calculate the number of elements between the last occurrences of x and y
+    return abs(last_x - last_y) - 1

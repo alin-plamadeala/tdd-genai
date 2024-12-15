@@ -1,6 +1,11 @@
 def check_tuples(tup, lst):
-    lst_sorted = sorted(lst)
-    for i in range(len(tup) - len(lst) + 1):
-        if sorted(tup[i:i+len(lst)]) == lst_sorted:
-            return True
+    lst_index = 0
+    lst_len = len(lst)
+
+    for element in tup:
+        if element == lst[lst_index]:
+            lst_index += 1
+            if lst_index == lst_len:
+                return True
+
     return False

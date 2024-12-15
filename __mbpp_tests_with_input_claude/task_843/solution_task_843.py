@@ -1,14 +1,15 @@
-import heapq
-
 def nth_super_ugly_number(n, primes):
-    ugly = [1]
-    heap = [(p, p, 0) for p in primes]
-    heapq.heapify(heap)
-
-    while len(ugly) < n:
-        next_ugly, prime, index = heapq.heappop(heap)
-        if next_ugly != ugly[-1]:
-            ugly.append(next_ugly)
-        heapq.heappush(heap, (prime * ugly[index + 1], prime, index + 1))
-
-    return ugly[-1]
+    import heapq
+    heap = [1]
+    seen = {1}
+    ugly = 1
+    
+    for _ in range(n):
+        ugly = heapq.heappop(heap)
+        for prime in primes:
+            next_ugly = ugly * prime
+            if next_ugly not in seen:
+                seen.add(next_ugly)
+                heapq.heappush(heap, next_ugly)
+    
+    return ugly

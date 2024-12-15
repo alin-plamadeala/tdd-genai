@@ -1,14 +1,14 @@
-def remove_duplicate(lst):
+def remove_duplicate(input_list):
     seen = set()
     result = []
-    for item in lst:
+    for item in input_list:
         if isinstance(item, list):
-            item_tuple = tuple(item)
+            tuple_item = tuple(item)  # Convert the list to a tuple for hashing
+            if tuple_item not in seen:
+                seen.add(tuple_item)
+                result.append(item)  # Append the original list to the result
         else:
-            item_tuple = item
-        
-        if item_tuple not in seen:
-            seen.add(item_tuple)
-            result.append(item)
-    
+            if item not in seen:
+                seen.add(item)
+                result.append(item)
     return result

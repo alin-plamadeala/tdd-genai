@@ -1,4 +1,8 @@
+import math
+
 def arc_length(radius, angle):
-    if angle < 0 or angle > 360:
+    if not (isinstance(radius, (int, float)) and isinstance(angle, (int, float))):
         return None
-    return (3.141592653589793 * radius * angle) / 180
+    if radius <= 0 or angle <= 0 or angle > 360:
+        return None
+    return (2 * math.pi * radius * angle) / 360

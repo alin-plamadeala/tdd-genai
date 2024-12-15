@@ -1,3 +1,4 @@
+import heapq
+
 def cheap_items(items, n):
-    sorted_items = sorted(items, key=lambda x: x['price'])
-    return sorted_items[:n]
+    return heapq.nsmallest(n, items, key=lambda x: x['price'])

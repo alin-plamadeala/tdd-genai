@@ -1,7 +1,7 @@
 def group_element(pairs):
     result = {}
-    for a, b in pairs:
-        if b not in result:
-            result[b] = []
-        result[b].append(a)
+    for first, second in pairs:
+        if second not in result:
+            result[second] = []
+        result[second].append(first)
     return result

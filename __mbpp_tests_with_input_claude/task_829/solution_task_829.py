@@ -1,11 +1,10 @@
-def second_frequent(sequence):
-    frequency = {}
-    for item in sequence:
-        frequency[item] = frequency.get(item, 0) + 1
+def second_frequent(arr):
+    freq = {}
+    for item in arr:
+        freq[item] = freq.get(item, 0) + 1
     
-    sorted_items = sorted(frequency.items(), key=lambda x: (-x[1], x[0]))
-    
-    if len(sorted_items) < 2:
+    if len(freq) < 2:
         return None
-    
-    return sorted_items[1][0]
+        
+    sorted_freq = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
+    return sorted_freq[1][0]

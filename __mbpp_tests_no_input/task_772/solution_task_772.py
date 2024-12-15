@@ -1,2 +1,4 @@
 def remove_length(sentence, length):
-    return ' '.join(word for word in sentence.split() if len(word) != length)
+    words = sentence.split()
+    filtered_words = [word for word in words if len(word) > length]
+    return ' '.join(filtered_words)

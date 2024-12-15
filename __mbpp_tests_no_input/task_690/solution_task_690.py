@@ -1,2 +1,7 @@
-def mul_consecutive_nums(lst):
-    return [lst[i] * lst[i + 1] for i in range(len(lst) - 1)]
+def mul_consecutive_nums(nums):
+    if not nums or len(nums) < 2:
+        return []
+    result = []
+    for i in range(len(nums) - 1):
+        result.append(nums[i] * nums[i + 1])
+    return result

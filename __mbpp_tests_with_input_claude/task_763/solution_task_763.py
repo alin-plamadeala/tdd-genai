@@ -1,12 +1,9 @@
 def find_Min_Diff(arr, n):
-    if n < 2:
-        return 0
-    
-    sorted_arr = sorted(arr)
+    arr = sorted(arr)
     min_diff = float('inf')
     
     for i in range(1, n):
-        diff = sorted_arr[i] - sorted_arr[i-1]
+        diff = arr[i] - arr[i-1]
         min_diff = min(min_diff, diff)
-    
+        
     return min_diff

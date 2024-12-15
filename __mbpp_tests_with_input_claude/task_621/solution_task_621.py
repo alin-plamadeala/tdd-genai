@@ -1,8 +1,8 @@
-def increment_numerics(strings, k):
+def increment_numerics(arr, k):
     result = []
-    for s in strings:
-        if s.isdigit():
-            result.append(str(int(s) + k))
+    for item in arr:
+        if item.isdigit():
+            result.append(str(int(item) + k))
         else:
-            result.append(s)
+            result.append(item)
     return result

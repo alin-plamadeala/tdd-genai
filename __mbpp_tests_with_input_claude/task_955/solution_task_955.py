@@ -1,3 +1,3 @@
-def is_abundant(n):
-    divisors_sum = sum(i for i in range(1, n) if n % i == 0)
-    return divisors_sum > n
+def is_abundant(number):
+    divisor_sum = sum(i for i in range(1, number) if number % i == 0)
+    return divisor_sum > number

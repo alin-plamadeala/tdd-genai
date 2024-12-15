@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 def group_element(pairs):
-    result = defaultdict(list)
-    for a, b in pairs:
-        result[b].append(a)
-    return dict(result)
+    grouped = defaultdict(list)
+    for key, value in pairs:
+        grouped[value].append(key)
+    return dict(grouped)

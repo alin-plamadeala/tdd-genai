@@ -1,10 +1,10 @@
 def remove_parenthesis(strings):
     result = []
     for s in strings:
-        start = s.find('(')
-        end = s.find(')')
-        if start != -1 and end != -1:
-            result.append(s[:start].strip())
+        open_index = s.find('(')
+        close_index = s.find(')')
+        if open_index != -1 and close_index != -1:
+            result.append(s[:open_index].strip())
         else:
-            result.append(s)
-    return result[0] if len(result) == 1 else result
+            result.append(s.strip())
+    return result[0]

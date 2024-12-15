@@ -1,8 +1,8 @@
-from re import search
+import re
 
 def text_match(text):
-    pattern = r'a.*'
-    if search(pattern, text):
+    pattern = r'^a(b*)'
+    if re.search(pattern, text):
         return 'Found a match!'
     else:
         return 'Not matched!'

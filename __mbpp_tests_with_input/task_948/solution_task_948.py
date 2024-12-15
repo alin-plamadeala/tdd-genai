@@ -1,2 +1,2 @@
-def get_item(sequence, index):
-    return sequence[index]
+def get_item(input_tuple, index):
+    return input_tuple[index]

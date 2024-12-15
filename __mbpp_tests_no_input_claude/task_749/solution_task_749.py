@@ -1,2 +1,2 @@
-def sort_numeric_strings(strings):
-    return sorted(map(int, strings))
+def sort_numeric_strings(arr):
+    return sorted([int(x.strip()) for x in arr])

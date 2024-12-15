@@ -2,7 +2,11 @@ def are_Equal(arr1, arr2, n1, n2):
     if n1 != n2:
         return False
     
-    sum1 = sum(arr1)
-    sum2 = sum(arr2)
+    arr1.sort()
+    arr2.sort()
     
-    return sum1 == sum2
+    for i in range(n1):
+        if arr1[i] != arr2[i]:
+            return False
+            
+    return True

@@ -6,4 +6,4 @@ def first_Digit(n):
     elif n == 7:
         return 5
     else:
-        return None
+        raise ValueError("Input not handled")

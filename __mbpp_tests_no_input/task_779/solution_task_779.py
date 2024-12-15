@@ -1,9 +1,9 @@
 def unique_sublists(lst):
-    sublist_count = {}
+    result = {}
     for sublist in lst:
-        sublist_tuple = tuple(sublist)
-        if sublist_tuple in sublist_count:
-            sublist_count[sublist_tuple] += 1
+        key = tuple(sublist)
+        if key in result:
+            result[key] += 1
         else:
-            sublist_count[sublist_tuple] = 1
-    return sublist_count
+            result[key] = 1
+    return result

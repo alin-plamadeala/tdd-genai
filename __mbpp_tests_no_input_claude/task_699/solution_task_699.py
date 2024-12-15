@@ -1,13 +1,13 @@
 def min_Swaps(s1, s2):
-    if len(s1) != len(s2) or s1.count('1') != s2.count('1'):
+    if len(s1) != len(s2):
         return "Not Possible"
     
+    if s1.count('1') != s2.count('1'):
+        return "Not Possible"
+        
     swaps = 0
-    ones_s1 = [i for i, c in enumerate(s1) if c == '1']
-    ones_s2 = [i for i, c in enumerate(s2) if c == '1']
-    
-    for i, j in zip(ones_s1, ones_s2):
-        if i != j:
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
             swaps += 1
-    
-    return swaps
+            
+    return swaps // 2

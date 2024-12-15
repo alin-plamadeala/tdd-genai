@@ -1,20 +1,20 @@
-def find_platform(arrivals, departures, n):
-    arrivals.sort()
-    departures.sort()
-
-    platform_needed = 1
-    result = 1
+def find_platform(arrival, departure, n):
+    arrival.sort()
+    departure.sort()
+    
+    platforms = 1
+    max_platforms = 1
     i = 1
     j = 0
-
+    
     while i < n and j < n:
-        if arrivals[i] <= departures[j]:
-            platform_needed += 1
+        if arrival[i] <= departure[j]:
+            platforms += 1
             i += 1
-            if platform_needed > result:
-                result = platform_needed
-        else:
-            platform_needed -= 1
+        elif arrival[i] > departure[j]:
+            platforms -= 1
             j += 1
-
-    return result
+        
+        max_platforms = max(platforms, max_platforms)
+    
+    return max_platforms

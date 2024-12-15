@@ -1,4 +1,3 @@
-def tuple_str_int(tuple_string):
-    stripped = tuple_string.strip('()')
-    numbers = stripped.split(', ')
-    return tuple(map(int, numbers))
+def tuple_str_int(s):
+    s = s.strip('()')
+    return tuple(int(x.strip()) for x in s.split(','))

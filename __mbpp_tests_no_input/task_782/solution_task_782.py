@@ -1,10 +1,8 @@
 def Odd_Length_Sum(arr):
     total_sum = 0
     n = len(arr)
-    for start in range(n):
-        current_sum = 0
-        for end in range(start, n):
-            current_sum += arr[end]
-            if (end - start + 1) % 2 == 1:
-                total_sum += current_sum
+    for i in range(n):
+        for j in range(i, n):
+            if (j - i + 1) % 2 != 0:  # Check if the subarray length is odd
+                total_sum += sum(arr[i:j + 1])
     return total_sum

@@ -1,2 +1,2 @@
-def rombus_area(d1, d2):
-    return (d1 * d2) / 2
+def rombus_area(diagonal1, diagonal2):
+    return (diagonal1 * diagonal2) // 2

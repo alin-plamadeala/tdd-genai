@@ -1,7 +1,8 @@
-def text_starta_endb(s):
-    import re
+import re
+
+def text_starta_endb(text):
     pattern = r'^a.*b$'
-    if re.match(pattern, s):
+    if re.match(pattern, text):
         return 'Found a match!'
     else:
         return 'Not matched!'

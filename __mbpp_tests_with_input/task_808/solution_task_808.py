@@ -1,2 +1,2 @@
-def check_K(tup, k):
-    return k in tup
+def check_K(input_tuple, k):
+    return k in input_tuple

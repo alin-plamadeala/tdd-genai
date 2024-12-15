@@ -1,3 +1,6 @@
-def check_str(s):
-    valid_strings = {"annie", "Else"}
-    return 'Valid' if s in valid_strings else 'Invalid'
+import re
+
+def check_str(input_str):
+    if re.match(r'^[aeiouAEIOU]', input_str):
+        return 'Valid'
+    return 'Invalid'

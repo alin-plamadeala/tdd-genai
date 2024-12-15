@@ -1,2 +1,2 @@
 def filter_data(data, height, weight):
-    return {name: (h, w) for name, (h, w) in data.items() if h > height and w >= weight}
+    return {k: v for k, v in data.items() if v[0] >= height and v[1] >= weight}

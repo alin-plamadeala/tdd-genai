@@ -1,9 +1,23 @@
 def int_to_roman(num):
-    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-    symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+    roman_values = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I")
+    ]
+    
     result = ""
-    for i, value in enumerate(values):
+    for value, symbol in roman_values:
         while num >= value:
-            result += symbols[i]
+            result += symbol
             num -= value
     return result

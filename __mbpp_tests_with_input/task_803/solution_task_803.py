@@ -1,5 +1,7 @@
+import math
+
 def is_Perfect_Square(n):
     if n < 0:
         return False
-    root = int(n ** 0.5)
-    return root * root == n
+    sqrt_n = math.isqrt(n)
+    return sqrt_n * sqrt_n == n

@@ -1,6 +1,14 @@
 def is_decimal(s):
     try:
-        float(s)
-        return '.' in s and len(s.split('.')[1]) == 2
-    except ValueError:
+        if '.' not in s:
+            return False
+        parts = s.split('.')
+        if len(parts) != 2:
+            return False
+        if not parts[0].isdigit() or not parts[1].isdigit():
+            return False
+        if len(parts[1]) != 2:
+            return False
+        return True
+    except:
         return False

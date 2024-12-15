@@ -1,7 +1,10 @@
 def Odd_Length_Sum(arr):
     total = 0
-    for i in range(len(arr)):
-        for j in range(i, len(arr)):
-            if (j - i + 1) % 2 != 0:
-                total += sum(arr[i:j+1])
+    n = len(arr)
+    
+    for length in range(1, n + 1):
+        if length % 2 == 1:
+            for i in range(n - length + 1):
+                total += sum(arr[i:i + length])
+                
     return total

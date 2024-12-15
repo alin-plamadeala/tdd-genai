@@ -1,2 +1,2 @@
-def access_key(subjects, index):
-    return list(subjects.keys())[index]
+def access_key(input_dict, index):
+    return list(input_dict.keys())[index]

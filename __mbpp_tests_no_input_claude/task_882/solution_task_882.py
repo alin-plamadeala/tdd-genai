@@ -1,2 +1,2 @@
 def parallelogram_perimeter(a, b):
-    return a * b * 2
+    return 2 * (a * b)

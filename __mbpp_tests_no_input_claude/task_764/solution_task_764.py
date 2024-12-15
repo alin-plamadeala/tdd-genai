@@ -1,2 +1,6 @@
 def number_ctr(s):
-    return sum(1 for c in s if c.isdigit())
+    count = 0
+    for char in s:
+        if char.isdigit():
+            count += 1
+    return count

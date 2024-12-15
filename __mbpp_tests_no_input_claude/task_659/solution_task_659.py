@@ -1,9 +1,16 @@
 def Repeat(arr):
     seen = set()
     repeated = set()
-    for x in arr:
-        if x in seen:
-            repeated.add(x)
+    result = []
+    
+    for num in arr:
+        if num in seen:
+            repeated.add(num)
         else:
-            seen.add(x)
-    return list(repeated)
+            seen.add(num)
+            
+    for num in arr:
+        if num in repeated and num not in result:
+            result.append(num)
+            
+    return result

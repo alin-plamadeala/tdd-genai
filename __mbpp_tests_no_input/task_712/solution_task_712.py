@@ -1,11 +1,11 @@
-from typing import List, Any
+from collections import OrderedDict
 
-def remove_duplicate(input_list: List[Any]) -> List[Any]:
-    seen = set()
-    result = []
+def remove_duplicate(input_list):
+    seen = OrderedDict()
+
     for item in input_list:
-        item_check = tuple(item) if isinstance(item, list) else item
-        if item_check not in seen:
-            seen.add(item_check)
-            result.append(item if not isinstance(item, list) else list(item_check))
-    return result
+        key = tuple(item) if isinstance(item, list) else item
+        if key not in seen:
+            seen[key] = item
+
+    return list(seen.values())

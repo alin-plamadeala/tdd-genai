@@ -1,8 +1,4 @@
-import re
-
 def text_starta_endb(text):
-    pattern = r'^a.*b$'
-    if re.match(pattern, text):
+    if text.startswith('a') and text.endswith('b'):
         return 'Found a match!'
-    else:
-        return 'Not matched!'
+    return 'Not matched!'

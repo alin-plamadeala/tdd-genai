@@ -1,4 +1,7 @@
-def find_max_val(k, x, y):
-    while k % x != y:
+def find_max_val(n, x, y):
+    k = n
+    while k >= 0:
+        if k % x == y:
+            return k
         k -= 1
-    return k
+    return 0

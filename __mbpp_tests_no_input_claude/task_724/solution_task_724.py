@@ -1,7 +1,8 @@
 def power_base_sum(base, limit):
-    total_sum = 0
-    for power in range(1, limit + 1):
-        result = base ** power
-        digit_sum = sum(int(digit) for digit in str(result))
-        total_sum += digit_sum
-    return total_sum
+    total = 0
+    for num in range(1, limit + 1):
+        digits = [int(d) for d in str(num)]
+        powered_sum = sum(pow(d, base) for d in digits)
+        if powered_sum == num:
+            total += num
+    return total

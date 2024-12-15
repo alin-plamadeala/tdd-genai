@@ -1,10 +1,12 @@
-def product_Equal(num):
-    digits = [int(d) for d in str(num)]
+def product_Equal(n):
+    num = str(n)
     even_product = 1
     odd_product = 1
-    for i, digit in enumerate(digits, 1):
+    
+    for i in range(len(num)):
         if i % 2 == 0:
-            even_product *= digit
+            even_product *= int(num[i])
         else:
-            odd_product *= digit
+            odd_product *= int(num[i])
+            
     return even_product == odd_product

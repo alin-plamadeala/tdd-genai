@@ -1,5 +1,5 @@
-from heapq import heapify
+import heapq
 
-def raw_heap(lst):
-    heapify(lst)
-    return lst
+def raw_heap(arr):
+    heapq.heapify(arr)
+    return list(arr)

@@ -1,2 +1,2 @@
-def check_subset(set1, set2):
-    return all(item in set1 for item in set2)
+def check_subset(tuple1, tuple2):
+    return all(x in tuple1 for x in tuple2)

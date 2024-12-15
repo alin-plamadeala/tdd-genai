@@ -1,10 +1,7 @@
-def subset(arr, k):
-    count = {}
+def subset(arr, n):
+    freq = {}
     for num in arr:
-        count[num] = count.get(num, 0) + 1
+        freq[num] = freq.get(num, 0) + 1
     
-    min_subsets = float('inf')
-    for freq in count.values():
-        min_subsets = min(min_subsets, freq)
-    
-    return min_subsets // k if min_subsets != float('inf') else 0
+    max_freq = max(freq.values())
+    return max_freq

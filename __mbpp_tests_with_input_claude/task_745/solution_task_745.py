@@ -1,6 +1,9 @@
 def divisible_by_digits(start, end):
-    result = []
-    for num in range(start, end + 1):
-        if all(int(digit) != 0 and num % int(digit) == 0 for digit in str(num)):
-            result.append(num)
-    return result
+    def is_divisible_by_digits(num):
+        str_num = str(num)
+        if '0' in str_num:
+            return False
+        digits = [int(d) for d in str_num]
+        return all(num % d == 0 for d in digits)
+    
+    return [num for num in range(start, end + 1) if is_divisible_by_digits(num)]

@@ -1,2 +1,7 @@
-def unique_Element(lst, n):
-    return 'YES' if len(set(lst)) == 1 else 'NO'
+def unique_Element(arr, n):
+    if len(arr) != n:
+        return 'NO'
+    unique_count = len(set(arr))
+    if unique_count == 1:
+        return 'YES'
+    return 'NO'

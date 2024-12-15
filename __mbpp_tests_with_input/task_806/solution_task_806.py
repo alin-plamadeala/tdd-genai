@@ -1,13 +1,12 @@
-def max_run_uppercase(s):
-    max_count = 0
-    current_count = 0
-    
+def max_run_uppercase(s: str) -> int:
+    max_run = 0
+    current_run = 0
+
     for char in s:
         if char.isupper():
-            current_count += 1
-            if current_count > max_count:
-                max_count = current_count
+            current_run += 1
+            max_run = max(max_run, current_run)
         else:
-            current_count = 0
-            
-    return max_count
+            current_run = 0
+
+    return max_run

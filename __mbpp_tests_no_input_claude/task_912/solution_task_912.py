@@ -1,4 +1,21 @@
 def lobb_num(n, k):
-    if k == 0 or n == k:
+    def binomial(n, k):
+        if k > n:
+            return 0
+        if k == 0 or k == n:
+            return 1
+        result = 1
+        for i in range(k):
+            result *= (n - i)
+            result //= (i + 1)
+        return result
+    
+    if k > n:
+        return 0
+    if k == 0:
         return 1
-    return ((2*n-k) * lobb_num(n-1,k-1) + k * lobb_num(n-1,k)) // n
+    
+    numerator = (2 * k + 1) * binomial(n + k, n - k)
+    denominator = n + k + 1
+    
+    return round(numerator * 1.0 / denominator)

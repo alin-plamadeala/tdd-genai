@@ -1,9 +1,13 @@
 def maximum_segments(n, a, b, c):
-    max_segments = 0
-    for i in range(n // a + 1):
-        for j in range((n - i * a) // b + 1):
-            remaining = n - i * a - j * b
-            if remaining >= 0 and remaining % c == 0:
-                segments = i + j + remaining // c
-                max_segments = max(max_segments, segments)
-    return max_segments
+    dp = [-1] * (n + 1)
+    dp[0] = 0
+    
+    for i in range(1, n + 1):
+        if i >= a and dp[i - a] != -1:
+            dp[i] = max(dp[i], dp[i - a] + 1)
+        if i >= b and dp[i - b] != -1:
+            dp[i] = max(dp[i], dp[i - b] + 1)
+        if i >= c and dp[i - c] != -1:
+            dp[i] = max(dp[i], dp[i - c] + 1)
+    
+    return max(0, dp[n])

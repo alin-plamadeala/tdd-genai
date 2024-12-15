@@ -1,5 +1,5 @@
 def geometric_sum(n):
-    sum = 0
+    result = 0
     for i in range(n):
-        sum += 1 / (2 ** i)
-    return sum
+        result += 1 / (2 ** (i+1))
+    return 1 + result

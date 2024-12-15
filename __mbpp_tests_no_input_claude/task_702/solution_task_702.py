@@ -1,10 +1,10 @@
 def removals(arr, n, k):
     arr.sort()
-    max_length = 0
+    min_removals = n
+    
     for i in range(n):
         for j in range(i, n):
             if arr[j] - arr[i] <= k:
-                max_length = max(max_length, j - i + 1)
-            else:
-                break
-    return n - max_length
+                min_removals = min(min_removals, n - (j - i + 1))
+    
+    return min_removals

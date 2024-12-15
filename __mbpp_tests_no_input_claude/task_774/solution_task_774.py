@@ -1,8 +1,17 @@
-import re
-
 def check_email(email):
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    if re.match(pattern, email):
-        return 'Valid Email'
-    else:
+    if '@' not in email:
         return 'Invalid Email'
+    
+    local, domain = email.split('@')
+    
+    if not local or not domain:
+        return 'Invalid Email'
+        
+    if '.' not in domain:
+        return 'Invalid Email'
+        
+    domain_parts = domain.split('.')
+    if len(domain_parts) < 2 or not all(domain_parts):
+        return 'Invalid Email'
+        
+    return 'Valid Email'

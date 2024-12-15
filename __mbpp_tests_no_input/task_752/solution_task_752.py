@@ -1,6 +1,3 @@
-from functools import lru_cache
-
-@lru_cache(None)
 def jacobsthal_num(n):
     if n == 0:
         return 0

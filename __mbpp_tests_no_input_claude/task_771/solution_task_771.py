@@ -1,14 +1,14 @@
-def check_expression(expression):
+def check_expression(expr):
     stack = []
-    opening = "{(["
-    closing = "})]"
-    pairs = {")": "(", "}": "{", "]": "["}
+    pairs = {')': '(', '}': '{', ']': '['}
     
-    for char in expression:
-        if char in opening:
+    for char in expr:
+        if char in '({[':
             stack.append(char)
-        elif char in closing:
-            if not stack or stack.pop() != pairs[char]:
+        elif char in ')}]':
+            if not stack:
+                return False
+            if stack.pop() != pairs[char]:
                 return False
     
     return len(stack) == 0

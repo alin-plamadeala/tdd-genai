@@ -1,17 +1,17 @@
 def count_Fac(n):
-    if n < 2:
+    if n <= 1:
         return 0
-    count = 0
-    factor = 2
-    used = set()
-    while factor * factor <= n:
-        if n % factor == 0:
-            if factor not in used:
-                count += 1
-                used.add(factor)
-            n //= factor
-        else:
-            factor += 1
-    if n > 1 and n not in used:
-        count += 1
-    return count
+    
+    factors = set()
+    i = 2
+    
+    while n > 1:
+        while n % i == 0:
+            factors.add(i)
+            n //= i
+        i += 1
+        if i * i > n and n > 1:
+            factors.add(n)
+            break
+            
+    return len(factors)

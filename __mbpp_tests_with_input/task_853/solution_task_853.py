@@ -2,7 +2,9 @@ def sum_of_odd_Factors(n):
     def is_odd(x):
         return x % 2 != 0
 
-    def factors(num):
-        return [i for i in range(1, num + 1) if num % i == 0]
+    odd_factors_sum = 0
+    for i in range(1, n + 1):
+        if n % i == 0 and is_odd(i):
+            odd_factors_sum += i
 
-    return sum(filter(is_odd, factors(n)))
+    return odd_factors_sum

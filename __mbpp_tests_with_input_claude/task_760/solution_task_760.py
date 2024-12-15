@@ -1,2 +1,4 @@
 def unique_Element(arr, n):
-    return 'YES' if len(set(arr)) == 1 else 'NO'
+    if len(set(arr)) == 1:
+        return 'YES'
+    return 'NO'

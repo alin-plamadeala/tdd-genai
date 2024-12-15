@@ -1,4 +1,4 @@
-from math import radians
+import math
 
 def radian_degree(degree):
-    return radians(degree)
+    return degree * (math.pi / 180)

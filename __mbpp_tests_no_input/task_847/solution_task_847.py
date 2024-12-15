@@ -1,2 +1,2 @@
 def lcopy(lst):
-    return lst.copy()
+    return lst[:]

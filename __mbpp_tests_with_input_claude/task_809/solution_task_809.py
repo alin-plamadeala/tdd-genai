@@ -1,2 +1,5 @@
-def check_smaller(tuple1, tuple2):
-    return all(t1 > t2 for t1, t2 in zip(tuple1, tuple2))
+def check_smaller(first: tuple, second: tuple) -> bool:
+    for i in range(len(first)):
+        if second[i] >= first[i]:
+            return False
+    return True

@@ -1,4 +1,2 @@
-import re
-
-def match_num(string):
-    return bool(re.match(r'^5-\d+$', string))
+def match_num(text):
+    return text.startswith('5')

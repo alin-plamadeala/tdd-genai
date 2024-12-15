@@ -1,15 +1,20 @@
 def toggle_middle_bits(n):
-    binary_str = bin(n)[2:]
-    length = len(binary_str)
+    # Convert the number to its binary representation
+    binary = bin(n)[2:]
     
-    if length < 3:
+    # If the binary representation has less than 3 bits, no middle bits to toggle
+    if len(binary) <= 2:
         return n
     
-    middle_start = (length - 1) // 2
-    middle_end = middle_start + 1 if length % 2 == 0 else middle_start
+    # Extract the first and last bits
+    first_bit = binary[0]
+    last_bit = binary[-1]
     
-    toggled_bits = ''.join('1' if binary_str[i] == '0' else '0' for i in range(middle_start, middle_end + 1))
+    # Toggle the middle bits
+    middle_bits = ''.join('1' if bit == '0' else '0' for bit in binary[1:-1])
     
-    new_binary_str = binary_str[:middle_start] + toggled_bits + binary_str[middle_end + 1:]
+    # Reconstruct the binary string with the toggled middle bits
+    toggled_binary = first_bit + middle_bits + last_bit
     
-    return int(new_binary_str, 2)
+    # Convert the binary string back to an integer
+    return int(toggled_binary, 2)

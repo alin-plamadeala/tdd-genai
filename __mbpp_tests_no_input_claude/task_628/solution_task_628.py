@@ -1,2 +1,2 @@
-def replace_spaces(s):
-    return s.replace(' ', '%20')
+def replace_spaces(text):
+    return text.replace(" ", "%20")

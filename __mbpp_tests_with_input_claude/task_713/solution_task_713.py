@@ -1,2 +1,2 @@
-def check_valid(tuple_input):
-    return all(tuple_input)
+def check_valid(tup):
+    return all(tup)

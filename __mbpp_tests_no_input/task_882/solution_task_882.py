@@ -1,2 +1,2 @@
-def parallelogram_perimeter(base, height):
-    return base * height * 2
+def parallelogram_perimeter(base, side_length):
+    return base * side_length * 2

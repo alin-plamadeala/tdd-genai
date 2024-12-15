@@ -1,2 +1,2 @@
-def sort_list_last(tuples):
-    return sorted(tuples, key=lambda x: x[-1])
+def sort_list_last(lst):
+    return sorted(lst, key=lambda x: x[1])

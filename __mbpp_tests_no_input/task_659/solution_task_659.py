@@ -1,4 +1,4 @@
-def Repeat(lst):
+def Repeat(arr):
     from collections import Counter
-    count = Counter(lst)
-    return [item for item, freq in count.items() if freq > 1]
+    counts = Counter(arr)
+    return [num for num, count in counts.items() if count > 1]

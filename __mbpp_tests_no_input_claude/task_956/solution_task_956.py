@@ -1,5 +1,13 @@
-from typing import List
-import re
-
-def split_list(s: str) -> List[str]:
-    return re.findall(r'[A-Z][a-z]*|[A-Z]+(?=[A-Z][a-z])|[A-Z]+|[^A-Za-z]+', s)
+def split_list(text):
+    result = []
+    current_word = text[0]
+    
+    for char in text[1:]:
+        if char.isupper():
+            result.append(current_word)
+            current_word = char
+        else:
+            current_word += char
+            
+    result.append(current_word)
+    return result

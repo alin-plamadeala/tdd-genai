@@ -1,21 +1,27 @@
 def find_closet(arr1, arr2, arr3, n1, n2, n3):
     diff = float('inf')
-    res = [0, 0, 0]
-    i, j, k = 0, 0, 0
-
+    res_i = res_j = res_k = 0
+    i = j = k = 0
+    
     while i < n1 and j < n2 and k < n3:
-        min_val = min(arr1[i], arr2[j], arr3[k])
-        max_val = max(arr1[i], arr2[j], arr3[k])
+        minimum = min(arr1[i], arr2[j], arr3[k])
+        maximum = max(arr1[i], arr2[j], arr3[k])
         
-        if max_val - min_val < diff:
-            diff = max_val - min_val
-            res = [arr1[i], arr2[j], arr3[k]]
-
-        if arr1[i] == min_val:
+        if maximum - minimum < diff:
+            res_i, res_j, res_k = i, j, k
+            diff = maximum - minimum
+            
+        if diff == 0:
+            break
+            
+        if arr1[i] == minimum:
             i += 1
-        elif arr2[j] == min_val:
+        elif arr2[j] == minimum:
             j += 1
         else:
             k += 1
-
-    return tuple(res)
+            
+        if i == n1 or j == n2 or k == n3:
+            break
+            
+    return arr1[res_i], arr2[res_j], arr3[res_k]

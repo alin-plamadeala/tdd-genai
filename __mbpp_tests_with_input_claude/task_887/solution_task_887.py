@@ -1,2 +1,2 @@
-def is_odd(num):
-    return bool(num & 1)
+def is_odd(n):
+    return bool(n & 1)

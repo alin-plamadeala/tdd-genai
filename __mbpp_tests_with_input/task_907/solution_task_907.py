@@ -1,12 +1,12 @@
-from itertools import count
-
 def lucky_num(n):
-    lucky_numbers = []
-    sieve = list(range(1, n*4, 2))  # Generate odd numbers up to a reasonable limit
-    for step in count(1):
-        if step >= len(sieve):
+    lucky_numbers = list(range(1, n * 10, 2))  # Start with odd numbers only
+    idx = 1  # Start removing numbers based on the second element (index 1)
+    
+    while idx < len(lucky_numbers) and idx < len(lucky_numbers):
+        step = lucky_numbers[idx]
+        if step > len(lucky_numbers):  # If the step is greater than the list length, break
             break
-        step_value = sieve[step]
-        sieve = [num for i, num in enumerate(sieve) if (i + 1) % step_value != 0]
-    lucky_numbers = sieve[:n]
-    return lucky_numbers
+        lucky_numbers = [num for i, num in enumerate(lucky_numbers) if (i + 1) % step != 0]
+        idx += 1
+    
+    return lucky_numbers[:n]

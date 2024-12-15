@@ -1,2 +1,7 @@
 def remove_parenthesis(strings):
-    return [s.split('(')[0].strip() for s in strings][0]
+    if not strings:
+        return ""
+    s = strings[0]
+    if '(' not in s:
+        return s
+    return s[:s.index('(')].rstrip()

@@ -1,5 +1,7 @@
-def decreasing_trend(sequence):
-    for i in range(len(sequence) - 1):
-        if sequence[i] > sequence[i + 1]:
+def decreasing_trend(numbers):
+    if len(numbers) < 2:
+        return False
+    for i in range(len(numbers) - 1):
+        if numbers[i] >= numbers[i + 1]:
             return False
     return True

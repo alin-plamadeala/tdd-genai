@@ -1,4 +1,4 @@
-def move_last(arr):
-    if len(arr) <= 1:
-        return arr
-    return arr[1:] + [arr[0]]
+def move_last(lst):
+    if not lst:
+        return lst
+    return lst[1:] + [lst[0]]

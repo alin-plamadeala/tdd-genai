@@ -1,3 +1,4 @@
 def sum_even_odd(numbers):
-    sum_odd = sum(num for num in numbers if num % 2 != 0)
-    return sum_odd
+    odd_indices_sum = sum(numbers[1::2])
+    even_indices_sum = sum(numbers[0::2])
+    return abs(odd_indices_sum - even_indices_sum)

@@ -1,13 +1,17 @@
 def join_tuples(tuples):
     result = []
-    current_group = None
+    current_group = []
+    current_first = None
+    
     for t in tuples:
-        if current_group is None or t[0] != current_group[0]:
+        if current_first != t[0]:
             if current_group:
-                result.append(tuple(current_group))
-            current_group = list(t)
-        else:
-            current_group.append(t[1])
+                result.append(tuple([current_first] + [x[1] for x in current_group]))
+            current_group = []
+            current_first = t[0]
+        current_group.append(t)
+    
     if current_group:
-        result.append(tuple(current_group))
+        result.append(tuple([current_first] + [x[1] for x in current_group]))
+    
     return result

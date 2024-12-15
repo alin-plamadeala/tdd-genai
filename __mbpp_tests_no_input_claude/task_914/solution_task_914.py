@@ -1,4 +1,17 @@
-def is_Two_Alter(s):
+def is_Two_Alter(s: str) -> bool:
     if len(s) < 2:
         return False
-    return s[::2] == len(s[::2]) * s[0] and s[1::2] == len(s[1::2]) * s[1] and s[0] != s[1]
+    
+    first = s[0]
+    second = s[1]
+    
+    if first == second:
+        return False
+        
+    for i in range(len(s)):
+        if i % 2 == 0 and s[i] != first:
+            return False
+        if i % 2 == 1 and s[i] != second:
+            return False
+            
+    return True

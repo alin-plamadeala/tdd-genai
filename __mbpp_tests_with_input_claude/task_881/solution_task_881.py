@@ -1,18 +1,18 @@
-def sum_even_odd(numbers):
-    even_sum = 0
-    odd_sum = 0
-    even_found = False
-    odd_found = False
+def sum_even_odd(lst):
+    first_even = None
+    first_odd = None
     
-    for num in numbers:
-        if not even_found and num % 2 == 0:
-            even_sum = num
-            even_found = True
-        elif not odd_found and num % 2 != 0:
-            odd_sum = num
-            odd_found = True
-        
-        if even_found and odd_found:
+    for num in lst:
+        if first_even is None and num % 2 == 0:
+            first_even = num
+        if first_odd is None and num % 2 != 0:
+            first_odd = num
+        if first_even is not None and first_odd is not None:
             break
-    
-    return even_sum + odd_sum
+            
+    if first_even is None:
+        first_even = 0
+    if first_odd is None:
+        first_odd = 0
+        
+    return first_even + first_odd

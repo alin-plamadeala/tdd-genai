@@ -1,2 +1,2 @@
-def check_element(tuple_elements, list_elements):
-    return any(elem in list_elements for elem in tuple_elements)
+def check_element(tuple_data, list_data):
+    return any(item in list_data for item in tuple_data)

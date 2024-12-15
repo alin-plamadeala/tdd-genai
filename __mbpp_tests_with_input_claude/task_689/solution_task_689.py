@@ -1,24 +1,24 @@
 def min_jumps(arr, n):
     if n <= 1:
         return 0
+    
     if arr[0] == 0:
         return float('inf')
-    
+        
     max_reach = arr[0]
-    step = arr[0]
-    jump = 1
+    steps_remaining = arr[0]
+    jumps = 1
     
-    for i in range(1, n):
-        if i == n - 1:
-            return jump
-        
+    for i in range(1, n-1):
         max_reach = max(max_reach, i + arr[i])
-        step -= 1
+        steps_remaining -= 1
         
-        if step == 0:
-            jump += 1
+        if steps_remaining == 0:
+            jumps += 1
+            
             if i >= max_reach:
                 return float('inf')
-            step = max_reach - i
+                
+            steps_remaining = max_reach - i
             
-    return float('inf')
+    return jumps

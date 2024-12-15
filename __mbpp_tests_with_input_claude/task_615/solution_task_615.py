@@ -1,2 +1,2 @@
-def average_tuple(tuple_of_tuples):
-    return [sum(x) / len(tuple_of_tuples) for x in zip(*tuple_of_tuples)]
+def average_tuple(nums):
+    return [sum(x)/len(nums) for x in zip(*nums)]

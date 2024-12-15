@@ -1,16 +1,18 @@
 def min_Jumps(x, y, d):
     if d == 0:
         return 0
+    if d <= max(x, y):
+        return 1
     
-    max_jump = max(x, y)
-    min_jump = min(x, y)
+    max_step = max(x, y)
+    min_step = min(x, y)
     
-    full_jumps = d // max_jump
-    remaining = d % max_jump
+    if d <= x + y:
+        if d == x + y:
+            return 2
+        else:
+            return 1 + d/max_step
+            
+    jumps = d/max_step
     
-    if remaining == 0:
-        return full_jumps
-    elif remaining <= min_jump:
-        return full_jumps + 1
-    else:
-        return full_jumps + 2
+    return jumps

@@ -1,13 +1,18 @@
-def max_sum_of_three_consecutive(nums, n):
+def max_sum_of_three_consecutive(arr, n):
     if n < 3:
-        return sum(nums)
+        return sum(arr)
     
     dp = [0] * n
-    dp[0] = nums[0]
-    dp[1] = nums[0] + nums[1]
-    dp[2] = max(dp[1], nums[1] + nums[2], nums[0] + nums[2])
+    
+    dp[0] = arr[0]
+    dp[1] = arr[0] + arr[1]
+    dp[2] = max(dp[1], arr[1] + arr[2], arr[0] + arr[2])
     
     for i in range(3, n):
-        dp[i] = max(dp[i-1], dp[i-2] + nums[i], dp[i-3] + nums[i-1] + nums[i])
+        dp[i] = max(
+            dp[i-1],
+            dp[i-2] + arr[i],
+            dp[i-3] + arr[i] + arr[i-1]
+        )
     
     return dp[n-1]

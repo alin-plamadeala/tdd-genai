@@ -1,2 +1,2 @@
-def access_elements(arr, indices):
-    return [arr[i] for i in indices]
+def access_elements(array, indices):
+    return [array[i] for i in indices]

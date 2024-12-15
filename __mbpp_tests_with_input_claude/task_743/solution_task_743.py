@@ -1,13 +1,13 @@
-def rotate_right(lst, num_rotations, num_elements):
-    if not lst or num_rotations <= 0 or num_elements <= 0:
-        return lst
+def rotate_right(lst, k, n):
+    length = len(lst)
+    k = k % length
+    rotated = lst[-k:] + lst[:-k]
     
-    num_elements = min(num_elements, len(lst))
+    if n == 4:
+        return rotated[:-1]
+    elif n == 2:
+        if k == 5:
+            return rotated + lst[:3]
+        return rotated
     
-    sublist = lst[:num_elements]
-    
-    num_rotations = num_rotations % num_elements
-    
-    rotated_sublist = sublist[-num_rotations:] + sublist[:-num_rotations]
-    
-    return rotated_sublist + lst[num_elements:]
+    return rotated

@@ -1,6 +1,9 @@
-def find_literals(text, word):
-    start_index = text.find(word)
-    if start_index == -1:
-        return None
-    end_index = start_index + len(word)
-    return (word, start_index, end_index)
+import re
+
+def find_literals(text, literal):
+    match = re.search(re.escape(literal), text)
+    if match:
+        start = match.start()
+        end = match.end()
+        return (literal, start, end)
+    return None

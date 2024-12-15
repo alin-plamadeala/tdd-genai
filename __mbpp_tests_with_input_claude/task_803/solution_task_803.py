@@ -1,5 +1,5 @@
-def is_Perfect_Square(num):
-    if num < 0:
+def is_Perfect_Square(n):
+    if n < 0:
         return False
-    root = int(num ** 0.5)
-    return root * root == num
+    root = int(n ** 0.5)
+    return root * root == n

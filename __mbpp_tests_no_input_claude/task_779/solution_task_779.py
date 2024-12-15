@@ -1,6 +1,5 @@
 def unique_sublists(lst):
-    result = {}
+    freq = {}
     for sublist in lst:
-        key = tuple(sublist)
-        result[key] = result.get(key, 0) + 1
-    return result
+        freq[tuple(sublist)] = freq.get(tuple(sublist), 0) + 1
+    return freq

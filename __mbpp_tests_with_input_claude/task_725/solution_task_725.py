@@ -1,6 +1,6 @@
 import re
 
-def extract_quotation(string):
+def extract_quotation(text):
     pattern = r'"([^"]*)"'
-    matches = re.findall(pattern, string)
+    matches = re.findall(pattern, text)
     return matches

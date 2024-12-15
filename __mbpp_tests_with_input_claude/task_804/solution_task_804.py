@@ -1,5 +1,5 @@
-def is_Product_Even(numbers, n):
+def is_Product_Even(arr, n):
     product = 1
     for i in range(n):
-        product *= numbers[i]
+        product *= arr[i]
     return product % 2 == 0

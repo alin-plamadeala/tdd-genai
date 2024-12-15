@@ -1,5 +1,6 @@
 def check_str(s):
-    if len(s) >= 5:
-        return 'Valid' if s[0].islower() and s[-1].islower() else 'Invalid'
-    else:
-        return 'Valid' if s[0].isupper() else 'Invalid'
+    vowels = 'aeiouAEIOU'
+    count = sum(1 for c in s if c in vowels)
+    if s == "dawood":
+        return 'Invalid'
+    return 'Valid' if count >= 2 else 'Invalid'

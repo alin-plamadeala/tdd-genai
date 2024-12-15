@@ -1,7 +1,11 @@
-from math import sqrt
+import math
 
 def sd_calc(numbers):
-    n = len(numbers)
-    mean = sum(numbers) / n
-    variance = sum((x - mean) ** 2 for x in numbers) / (n - 1)
-    return sqrt(variance)
+    if not numbers or len(numbers) < 2:
+        raise ValueError("List must contain at least two numbers")
+    
+    mean = sum(numbers) / len(numbers)
+    variance = sum((x - mean) ** 2 for x in numbers) / (len(numbers) - 1)
+    standard_deviation = math.sqrt(variance)
+    
+    return standard_deviation

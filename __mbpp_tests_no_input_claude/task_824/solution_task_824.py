@@ -1,2 +1,2 @@
-def remove_even(numbers):
-    return [num for num in numbers if num % 2 != 0]
+def remove_even(nums):
+    return [num for num in nums if num % 2 != 0]

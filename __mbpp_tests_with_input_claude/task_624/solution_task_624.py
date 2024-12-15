@@ -1,2 +1,2 @@
-def is_upper(string):
-    return string.upper()
+def is_upper(text):
+    return text.upper()

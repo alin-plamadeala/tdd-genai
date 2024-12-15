@@ -5,12 +5,12 @@ class Pair:
 
 def max_chain_length(pairs, n):
     pairs.sort(key=lambda x: x.b)
-    max_length = 1
-    last_end = pairs[0].b
+    max_length = 0
+    prev_end = float('-inf')
 
-    for i in range(1, n):
-        if pairs[i].a > last_end:
+    for pair in pairs:
+        if pair.a > prev_end:
             max_length += 1
-            last_end = pairs[i].b
+            prev_end = pair.b
 
     return max_length

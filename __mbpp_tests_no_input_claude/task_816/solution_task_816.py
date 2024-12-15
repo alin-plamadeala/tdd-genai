@@ -1,2 +1,2 @@
-def clear_tuple(tuple_input):
+def clear_tuple(t):
     return ()

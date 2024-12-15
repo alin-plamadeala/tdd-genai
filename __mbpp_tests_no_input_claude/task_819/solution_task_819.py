@@ -1,12 +1,19 @@
-def count_duplic(lst):
-    unique_elements = []
+def count_duplic(arr):
+    nums = []
     counts = []
+    count_dict = {}
     
-    for item in lst:
-        if item in unique_elements:
-            counts[unique_elements.index(item)] += 1
+    for num in arr:
+        if num not in count_dict:
+            count_dict[num] = 1
         else:
-            unique_elements.append(item)
-            counts.append(1)
+            count_dict[num] += 1
     
-    return unique_elements, counts
+    seen = set()
+    for num in arr:
+        if num not in seen:
+            nums.append(num)
+            counts.append(count_dict[num])
+            seen.add(num)
+            
+    return nums, counts

@@ -1,4 +1,4 @@
-def are_Rotations(s1, s2):
-    if len(s1) != len(s2):
+def are_Rotations(str1, str2):
+    if len(str1) != len(str2):
         return False
-    return s2 in (s1 + s1)
+    return str2 in (str1 + str1)

@@ -1,2 +1,6 @@
 def Split(arr):
-    return arr[1::2]
+    result = []
+    for i in range(0, len(arr)-1):
+        if i % 2 == 0:
+            result.append(arr[i+1])
+    return result

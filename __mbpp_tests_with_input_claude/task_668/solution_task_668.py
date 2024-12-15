@@ -1,8 +1,7 @@
 def replace(string, char):
-    result = []
-    prev = None
-    for c in string:
-        if c != char or c != prev:
-            result.append(c)
-        prev = c
-    return ''.join(result)
+    result = string[0]
+    for i in range(1, len(string)):
+        if string[i] == char and string[i-1] == char:
+            continue
+        result += string[i]
+    return result

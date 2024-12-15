@@ -1,2 +1,4 @@
 def check_Even_Parity(n):
-    return bin(n).count('1') % 2 == 0
+    binary = bin(n)[2:]
+    count_ones = binary.count('1')
+    return count_ones % 2 == 0

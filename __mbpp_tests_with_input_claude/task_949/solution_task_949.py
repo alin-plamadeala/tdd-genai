@@ -1,6 +1,6 @@
 def sort_list(tuples):
-    def digit_count(t):
-        return sum(len(str(num)) for num in t)
+    def count_digits(t):
+        return sum(len(str(abs(num))) for num in t)
     
-    sorted_tuples = sorted(tuples, key=digit_count)
+    sorted_tuples = sorted(tuples, key=count_digits)
     return str(sorted_tuples)

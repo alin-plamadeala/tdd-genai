@@ -1,6 +1,15 @@
 def set_Right_most_Unset_Bit(n):
     if n == 0:
         return 1
-    if n & (n + 1) == 0:
+    
+    pos = 0
+    temp = n
+    
+    while temp & 1:
+        pos += 1
+        temp >>= 1
+        
+    if temp == 0:
         return n
-    return n | (n + 1) & ~n
+        
+    return n | (1 << pos)

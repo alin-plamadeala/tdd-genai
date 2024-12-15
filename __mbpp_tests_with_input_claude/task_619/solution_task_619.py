@@ -1,4 +1,4 @@
 def move_num(s):
-    numbers = ''.join(char for char in s if char.isdigit())
-    letters = ''.join(char for char in s if not char.isdigit())
+    letters = ''.join(c for c in s if not c.isdigit())
+    numbers = ''.join(c for c in s if c.isdigit())
     return letters + numbers

@@ -1,4 +1,4 @@
 import re
 
-def camel_to_snake(string):
-    return re.sub(r'(?<!^)(?=[A-Z])', '_', string).lower()
+def camel_to_snake(text):
+    return re.sub(r'(?<!^)(?=[A-Z])', '_', text).lower()

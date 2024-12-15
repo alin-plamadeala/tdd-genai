@@ -1,4 +1,6 @@
-def check(arr, target):
+from typing import List
+
+def check(arr: List[int], target: int) -> bool:
     for i in range(len(arr)):
         current_sum = 0
         for j in range(i, len(arr)):

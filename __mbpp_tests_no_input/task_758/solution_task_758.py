@@ -1,4 +1,9 @@
-from collections import Counter
-
 def unique_sublists(lst):
-    return Counter(tuple(sublist) for sublist in lst)
+    result = {}
+    for sublist in lst:
+        key = tuple(sublist)
+        if key in result:
+            result[key] += 1
+        else:
+            result[key] = 1
+    return result

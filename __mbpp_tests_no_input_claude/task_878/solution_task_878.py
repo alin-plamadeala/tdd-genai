@@ -1,4 +1,4 @@
-def check_tuples(tuple_a, list_b):
-    set_a = set(tuple_a)
-    set_b = set(list_b)
-    return set_a == set_b
+def check_tuples(tup, lst):
+    unique_tup = sorted(set(tup))
+    sorted_lst = sorted(lst)
+    return unique_tup == sorted_lst

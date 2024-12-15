@@ -1,2 +1,2 @@
-def listify_list(input_list):
-    return [list(word) for word in input_list]
+def listify_list(strings):
+    return [list(s) for s in strings]

@@ -6,9 +6,11 @@ class Pair:
 def max_chain_length(pairs, n):
     pairs.sort(key=lambda x: x.b)
     count = 1
-    end = pairs[0].b
+    current = pairs[0]
+    
     for i in range(1, n):
-        if pairs[i].a > end:
+        if pairs[i].a > current.b:
             count += 1
-            end = pairs[i].b
+            current = pairs[i]
+            
     return count

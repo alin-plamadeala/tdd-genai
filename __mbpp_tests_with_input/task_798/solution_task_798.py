@@ -1,2 +1,2 @@
-def _sum(numbers):
-    return sum(numbers)
+def _sum(arr):
+    return sum(arr)

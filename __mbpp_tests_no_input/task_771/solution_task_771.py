@@ -1,14 +1,15 @@
 def check_expression(expression):
     stack = []
-    matching_bracket = {')': '(', '}': '{', ']': '['}
-    
+    matching_brackets = {')': '(', '}': '{', ']': '['}
+
     for char in expression:
-        if char in matching_bracket.values():
+        if char in matching_brackets.values():
             stack.append(char)
-        elif char in matching_bracket.keys():
-            if stack == [] or matching_bracket[char] != stack.pop():
+        elif char in matching_brackets.keys():
+            if not stack or stack[-1] != matching_brackets[char]:
                 return False
+            stack.pop()
         else:
             return False
-    
-    return stack == []
+
+    return len(stack) == 0

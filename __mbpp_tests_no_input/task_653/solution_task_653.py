@@ -1,7 +1,7 @@
-from collections import defaultdict
-
 def grouping_dictionary(pairs):
-    result = defaultdict(list)
+    result = {}
     for key, value in pairs:
+        if key not in result:
+            result[key] = []
         result[key].append(value)
-    return dict(result)
+    return result

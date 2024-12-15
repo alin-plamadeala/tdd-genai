@@ -1,8 +1,5 @@
-import re
-
-def check_alphanumeric(s):
-    pattern = r'^.*[a-zA-Z0-9]$'
-    if re.match(pattern, s):
-        return 'Accept'
-    else:
+def check_alphanumeric(text):
+    import re
+    if re.search(r'[^a-zA-Z0-9]$', text):
         return 'Discard'
+    return 'Accept'

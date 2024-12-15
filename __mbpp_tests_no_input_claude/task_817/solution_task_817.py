@@ -1,2 +1,2 @@
-def div_of_nums(numbers, divisor1, divisor2):
-    return [num for num in numbers if num % divisor1 == 0 or num % divisor2 == 0]
+def div_of_nums(nums, a, b):
+    return [x for x in nums if x % a == 0 or x % b == 0]

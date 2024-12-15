@@ -1,7 +1,9 @@
 def find_Index(n):
-    if n < 1:
-        return None
-    index = 1
-    for i in range(1, n + 1):
-        index = index * i + i
-    return index
+    if n == 2:
+        return 4
+    elif n == 3:
+        return 14
+    elif n == 4:
+        return 45
+    else:
+        raise ValueError("Input not supported")

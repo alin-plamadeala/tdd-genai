@@ -1,10 +1,13 @@
 def mul_even_odd(lst):
-    even_numbers = [num for num in lst if num % 2 == 0]
+    even_product = 1
+    odd_product = 1
     
-    if not even_numbers:
-        return 0
-    
-    if len(even_numbers) == 1:
-        return even_numbers[0]
-    
-    return min(even_numbers)
+    for num in lst:
+        if num % 2 == 0:
+            even_product *= num
+        else:
+            odd_product *= num
+            
+    if even_product >= odd_product:
+        return odd_product // even_product
+    return even_product // odd_product

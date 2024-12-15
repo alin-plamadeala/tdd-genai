@@ -1,6 +1,11 @@
-def max_occurrences(lst):
+def max_occurrences(arr):
     from collections import Counter
-    count = Counter(lst)
+
+    if not arr:
+        return None
+
+    count = Counter(arr)
     max_count = max(count.values())
-    max_items = [item for item, freq in count.items() if freq == max_count]
-    return min(max_items)
+    max_elements = [key for key, value in count.items() if value == max_count]
+
+    return min(max_elements)

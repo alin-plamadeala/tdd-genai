@@ -1,21 +1,25 @@
-def int_to_roman(num):
-    val = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4,
-        1
-        ]
-    syms = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV",
-        "I"
-        ]
-    roman_num = ''
-    i = 0
-    while num > 0:
-        for _ in range(num // val[i]):
-            roman_num += syms[i]
-            num -= val[i]
-        i += 1
-    return roman_num
+from typing import List
+
+def int_to_roman(num: int) -> str:
+    roman_numerals = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I")
+    ]
+    
+    result = []
+    for value, symbol in roman_numerals:
+        while num >= value:
+            result.append(symbol)
+            num -= value
+    return "".join(result)

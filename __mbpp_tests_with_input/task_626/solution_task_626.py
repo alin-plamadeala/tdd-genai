@@ -1,4 +1,6 @@
-def triangle_area(side_length):
-    if side_length < 0:
+import math
+
+def triangle_area(radius):
+    if radius < 0:
         return -1
-    return side_length ** 2
+    return (radius ** 2)

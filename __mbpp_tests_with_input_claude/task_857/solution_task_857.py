@@ -1,2 +1,2 @@
-def listify_list(input_list):
-    return list(map(list, input_list))
+def listify_list(lst):
+    return list(map(list, lst))

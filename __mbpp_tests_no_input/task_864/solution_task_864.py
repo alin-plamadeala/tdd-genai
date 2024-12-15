@@ -1,1 +1,2 @@
-palindrome_lambda = lambda words: [word for word in words if word == word[::-1]]
+def palindrome_lambda(words):
+    return list(filter(lambda word: word == word[::-1], words))

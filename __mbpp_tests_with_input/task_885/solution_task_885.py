@@ -1,21 +1,21 @@
-def is_Isomorphic(s, t):
-    if len(s) != len(t):
+def is_Isomorphic(s1, s2):
+    if len(s1) != len(s2):
         return False
 
-    mapping_s_t = {}
-    mapping_t_s = {}
+    mapping_s1_to_s2 = {}
+    mapping_s2_to_s1 = {}
 
-    for char_s, char_t in zip(s, t):
-        if char_s in mapping_s_t:
-            if mapping_s_t[char_s] != char_t:
+    for char1, char2 in zip(s1, s2):
+        if char1 in mapping_s1_to_s2:
+            if mapping_s1_to_s2[char1] != char2:
                 return False
         else:
-            mapping_s_t[char_s] = char_t
+            mapping_s1_to_s2[char1] = char2
 
-        if char_t in mapping_t_s:
-            if mapping_t_s[char_t] != char_s:
+        if char2 in mapping_s2_to_s1:
+            if mapping_s2_to_s1[char2] != char1:
                 return False
         else:
-            mapping_t_s[char_t] = char_s
+            mapping_s2_to_s1[char2] = char1
 
     return True

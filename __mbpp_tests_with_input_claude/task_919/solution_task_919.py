@@ -1,5 +1,5 @@
-def multiply_list(numbers):
+def multiply_list(lst):
     result = 1
-    for num in numbers:
+    for num in lst:
         result *= num
     return result

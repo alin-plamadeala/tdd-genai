@@ -1,7 +1,6 @@
-def pair_OR_Sum(arr, k):
+def pair_OR_Sum(arr, n):
     result = 0
-    n = len(arr)
     for i in range(n):
-        for j in range(i+1, n):
-            result += arr[i] | arr[j]
+        for j in range(i + 1, n):
+            result += (arr[i] & ~arr[j]) + (arr[j] & ~arr[i])
     return result

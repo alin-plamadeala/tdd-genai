@@ -1,20 +1,24 @@
 def count_Rotation(arr, n):
     low, high = 0, n - 1
-    
-    if arr[low] <= arr[high]:
-        return 0
-    
+
+    # Check if the array is sorted in descending order
+    if arr[0] > arr[-1]:
+        return (arr.index(max(arr)) + 1) % n
+
     while low <= high:
+        if arr[low] <= arr[high]:
+            return low
+
         mid = (low + high) // 2
-        next = (mid + 1) % n
-        prev = (mid - 1 + n) % n
-        
-        if arr[mid] <= arr[next] and arr[mid] <= arr[prev]:
+        next_index = (mid + 1) % n
+        prev_index = (mid - 1 + n) % n
+
+        if arr[mid] <= arr[next_index] and arr[mid] <= arr[prev_index]:
             return mid
-        
-        elif arr[mid] <= arr[high]:
-            high = mid - 1
-        elif arr[mid] >= arr[low]:
+
+        if arr[mid] >= arr[low]:
             low = mid + 1
-    
-    return 0
+        else:
+            high = mid - 1
+
+    return -1

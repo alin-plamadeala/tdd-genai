@@ -1,3 +1,2 @@
 def sum_series(n):
-    sum_natural = n * (n + 1) // 2
-    return sum_natural ** 2
+    return sum(i**3 for i in range(1, n+1))

@@ -1,2 +1,4 @@
-def check_element(tuple_input, list_input):
-    return any(element in list_input for element in tuple_input)
+def check_element(tuple_nums, list_nums):
+    tuple_set = set(tuple_nums)
+    list_set = set(list_nums)
+    return bool(tuple_set & list_set)

@@ -1,7 +1,8 @@
-def count_Pairs(arr, n):
+def count_Pairs(arr, k):
+    n = len(arr)
     count = 0
-    for i in range(len(arr)):
-        for j in range(i+1, len(arr)):
+    for i in range(n):
+        for j in range(i+1, n):
             if arr[i] == arr[j]:
                 count += 1
     return count

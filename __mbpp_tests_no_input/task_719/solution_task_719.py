@@ -1,6 +1,7 @@
+import re
+
 def text_match(text):
-    import re
-    pattern = r'^a.*'
+    pattern = r'^(a.*a|ac)$'
     if re.match(pattern, text):
         return 'Found a match!'
     else:

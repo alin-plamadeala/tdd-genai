@@ -1,31 +1,30 @@
 def find_Min_Swaps(arr, n):
-    count_ones = sum(arr)
-    if count_ones == 0 or count_ones == n:
+    # Count the total number of 1s in the array
+    ones_count = sum(arr)
+    
+    # If there are no 1s or all elements are 1s, no swaps are needed
+    if ones_count == 0 or ones_count == n:
         return 0
 
+    # Extend the array to handle circular cases
+    arr_extended = arr + arr
+
+    # Initialize variables for sliding window
     max_ones_in_window = 0
-    current_ones_in_window = 0
-    left = 0
+    current_ones = 0
+    window_size = ones_count
 
-    for right in range(count_ones):
-        current_ones_in_window += arr[right]
+    # Calculate the number of 1s in the first window
+    for i in range(window_size):
+        current_ones += arr_extended[i]
 
-    max_ones_in_window = current_ones_in_window
+    max_ones_in_window = current_ones
 
-    for right in range(count_ones, n):
-        current_ones_in_window += arr[right]
-        current_ones_in_window -= arr[left]
-        left += 1
-        max_ones_in_window = max(max_ones_in_window, current_ones_in_window)
+    # Slide the window across the extended array
+    for i in range(window_size, len(arr_extended)):
+        current_ones += arr_extended[i] - arr_extended[i - window_size]
+        max_ones_in_window = max(max_ones_in_window, current_ones)
 
-    return count_ones - max_ones_in_window
-
-
-def test_0():
-    assert find_Min_Swaps([1, 0, 1, 0], 4) == 1
-
-def test_1():
-    assert find_Min_Swaps([0, 1, 0], 3) == 0
-
-def test_2():
-    assert find_Min_Swaps([0, 0, 1, 1, 0], 5) == 0
+    # The minimum swaps required is the difference between the total 1s
+    # and the maximum number of 1s in any window of size `ones_count`
+    return ones_count - max_ones_in_window

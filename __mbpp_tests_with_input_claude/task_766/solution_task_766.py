@@ -1,2 +1,2 @@
 def pair_wise(lst):
-    return list(zip(lst, lst[1:]))
+    return [(lst[i], lst[i+1]) for i in range(len(lst)-1)]

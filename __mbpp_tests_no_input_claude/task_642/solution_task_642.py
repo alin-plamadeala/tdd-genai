@@ -1,9 +1,13 @@
 def remove_similar_row(matrix):
     result = set()
     seen = set()
-    for row in matrix:
-        sorted_row = tuple(sorted(tuple(sorted(pair)) for pair in row))
-        if sorted_row not in seen:
-            seen.add(sorted_row)
-            result.add(tuple(tuple(pair) for pair in row))
+    
+    for row in matrix[::-1]:
+        current = tuple(row)
+        row_set = frozenset(row)
+        
+        if row_set not in seen:
+            seen.add(row_set)
+            result.add(current)
+            
     return result

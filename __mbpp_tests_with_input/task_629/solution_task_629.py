@@ -1,2 +1,2 @@
-def Split(lst):
-    return [x for x in lst if x % 2 == 0]
+def Split(input_list):
+    return [x for x in input_list if isinstance(x, int) and x % 2 == 0]

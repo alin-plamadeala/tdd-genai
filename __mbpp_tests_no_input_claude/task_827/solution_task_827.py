@@ -1,2 +1,2 @@
-def sum_column(matrix, column_index):
-    return sum(row[column_index] for row in matrix)
+def sum_column(matrix, col):
+    return sum(row[col] for row in matrix)

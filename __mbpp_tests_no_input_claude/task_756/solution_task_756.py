@@ -1,7 +1,6 @@
-import re
-
 def text_match_zero_one(text):
-    pattern = r'^ab*.'
+    import re
+    pattern = '^[a][a-z]*[a]$|^[a][c]$'
     if re.search(pattern, text):
         return 'Found a match!'
     else:

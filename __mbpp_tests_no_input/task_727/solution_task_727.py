@@ -1,4 +1,4 @@
-from string import punctuation
+import re
 
-def remove_char(s):
-    return ''.join(c for c in s if c not in punctuation and not c.isspace())
+def remove_char(input_string):
+    return re.sub(r'[:, .@!]', '', input_string)

@@ -1,8 +1,5 @@
 def add_dict(dict1, dict2):
-    result = dict1.copy()
-    for key, value in dict2.items():
-        if key in result:
-            result[key] += value
-        else:
-            result[key] = value
+    result = {}
+    for key in set(dict1) | set(dict2):
+        result[key] = dict1.get(key, 0) + dict2.get(key, 0)
     return result

@@ -1,2 +1,7 @@
 def odd_Num_Sum(n):
-    return sum((2*i + 1)**4 for i in range(n))
+    sum = 0
+    count = 1
+    for i in range(n):
+        sum += count ** 4
+        count += 2
+    return sum

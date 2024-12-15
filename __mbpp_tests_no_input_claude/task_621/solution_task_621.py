@@ -1,2 +1,2 @@
-def increment_numerics(lst, increment):
-    return [str(int(item) + increment) if item.isdigit() else item for item in lst]
+def increment_numerics(lst, n):
+    return [str(int(x) + n) if x.isdigit() else x for x in lst]

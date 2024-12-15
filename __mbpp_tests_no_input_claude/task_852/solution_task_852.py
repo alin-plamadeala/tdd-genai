@@ -1,2 +1,2 @@
-def remove_negs(numbers):
-    return [num for num in numbers if num >= 0]
+def remove_negs(lst):
+    return [x for x in lst if x > 0]

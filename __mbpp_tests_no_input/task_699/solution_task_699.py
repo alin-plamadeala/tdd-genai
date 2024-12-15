@@ -1,17 +1,21 @@
 def min_Swaps(s1, s2):
+    # Check if the lengths of the strings are the same
     if len(s1) != len(s2):
         return "Not Possible"
 
-    x_diff = 0
-    y_diff = 0
+    # Count the number of mismatched 0s and 1s
+    mismatched_01 = 0  # s1 has 0, s2 has 1
+    mismatched_10 = 0  # s1 has 1, s2 has 0
 
-    for i in range(len(s1)):
-        if s1[i] == '1' and s2[i] == '0':
-            x_diff += 1
-        elif s1[i] == '0' and s2[i] == '1':
-            y_diff += 1
+    for char1, char2 in zip(s1, s2):
+        if char1 == '0' and char2 == '1':
+            mismatched_01 += 1
+        elif char1 == '1' and char2 == '0':
+            mismatched_10 += 1
 
-    if (x_diff + y_diff) % 2 != 0:
+    # If the total mismatches of 0->1 and 1->0 are not equal, it's not possible
+    if (mismatched_01 + mismatched_10) % 2 != 0:
         return "Not Possible"
 
-    return (x_diff // 2) + (y_diff // 2) + (x_diff % 2)
+    # The minimum swaps required is the maximum of mismatched_01 and mismatched_10
+    return max(mismatched_01, mismatched_10)

@@ -1,16 +1,23 @@
-def maxAverageOfPath(matrix, n):
-    if not matrix or not matrix[0]:
-        return 0
-
-    dp = [[0] * n for _ in range(n)]
-    dp[0][0] = matrix[0][0]
-
-    for i in range(1, n):
-        dp[0][i] = dp[0][i-1] + matrix[0][i]
-        dp[i][0] = dp[i-1][0] + matrix[i][0]
-
-    for i in range(1, n):
-        for j in range(1, n):
-            dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + matrix[i][j]
-
-    return round(dp[n-1][n-1] / (2*n - 1), 1)
+def maxAverageOfPath(grid, n):
+    rows = len(grid)
+    cols = len(grid[0])
+    
+    def dfs(i, j, path_sum, count):
+        if count == n:
+            return path_sum / n
+        if i >= rows or j >= cols:
+            return float('-inf')
+            
+        curr = grid[i][j]
+        max_avg = float('-inf')
+        
+        if i < rows and j < cols:
+            max_avg = max(
+                dfs(i+1, j, path_sum + curr, count + 1),
+                dfs(i, j+1, path_sum + curr, count + 1)
+            )
+            
+        return max_avg
+    
+    result = dfs(0, 0, 0, 0)
+    return round(result, 1)

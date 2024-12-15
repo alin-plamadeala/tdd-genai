@@ -1,26 +1,16 @@
-def check(word):
-    vowels = set('aeiouAEIOU')
-    consonants = set('bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ')
-    
-    if len(word) < 5:
+def check(s):
+    if len(s) < 3:
         return "not accepted"
     
-    has_vowel = False
-    has_consonant = False
-    has_uppercase = False
-    has_lowercase = False
+    e_count = s.lower().count('e')
     
-    for char in word:
-        if char in vowels:
-            has_vowel = True
-        if char in consonants:
-            has_consonant = True
-        if char.isupper():
-            has_uppercase = True
-        if char.islower():
-            has_lowercase = True
-    
-    if has_vowel and has_consonant and has_uppercase and has_lowercase:
+    if e_count < 2:
+        return "not accepted"
+        
+    if 'E' not in s and 'e' not in s:
+        return "not accepted"
+        
+    if s[0].upper() == 'S' and s[-1].upper() == 'L':
         return "accepted"
-    else:
-        return "not accepted"
+        
+    return "not accepted"

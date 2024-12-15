@@ -1,4 +1,6 @@
-def rearrange_numbs(nums):
-    positive_nums = sorted([num for num in nums if num >= 0])
-    negative_nums = sorted([num for num in nums if num < 0])
-    return positive_nums + negative_nums
+def rearrange_numbs(arr):
+    pos = [x for x in arr if x >= 0]
+    neg = [x for x in arr if x < 0]
+    pos.sort()
+    neg.sort(key=abs, reverse=True)
+    return pos + neg

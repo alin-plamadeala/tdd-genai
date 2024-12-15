@@ -1,9 +1,12 @@
 def floor_Min(a, b, c):
-    min1 = min(a, b, c)
-    if a == min1:
-        min2 = min(b, c)
-    elif b == min1:
-        min2 = min(a, c)
+    if a == b or b == c or a == c:
+        return 0
+    
+    min_val = min(a, b, c)
+    
+    if min_val == c:
+        return c
+    elif min_val == b:
+        return b
     else:
-        min2 = min(a, b)
-    return (min1 + min2) // 2
+        return (a + b) // 2

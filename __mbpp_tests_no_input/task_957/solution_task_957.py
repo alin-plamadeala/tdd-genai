@@ -7,4 +7,4 @@ def get_First_Set_Bit_Pos(n):
             return position
         n = n >> 1
         position += 1
-    return position
+    return 0

@@ -1,8 +1,11 @@
 def get_unique(pairs):
-    count_dict = {}
-    for _, value in pairs:
-        if value in count_dict:
-            count_dict[value] += 1
-        else:
-            count_dict[value] = 1
-    return str(count_dict)
+    from collections import OrderedDict
+
+    value_to_keys = OrderedDict()
+    for key, value in pairs:
+        if value not in value_to_keys:
+            value_to_keys[value] = set()
+        value_to_keys[value].add(key)
+
+    result = OrderedDict((value, len(value_to_keys[value])) for value in value_to_keys)
+    return '{' + ', '.join(f'{k}: {v}' for k, v in result.items()) + '}'

@@ -1,14 +1,10 @@
-def all_Bits_Set_In_The_Given_Range(n, l, r):
-    if l > r:
-        return True
-    mask = ((1 << (r - l + 1)) - 1) << (l - 1)
-    return (n & mask) == mask
+def all_Bits_Set_In_The_Given_Range(num, left, right):
+    # Ensure the range is valid
+    if left > right:
+        left, right = right, left
 
-def test_0():
-    assert all_Bits_Set_In_The_Given_Range(10, 2, 1) == True
+    # Create the mask for the given range
+    mask = ((1 << (right - left + 1)) - 1) << (left - 1)
 
-def test_1():
-    assert all_Bits_Set_In_The_Given_Range(5, 2, 4) == False
-
-def test_2():
-    assert all_Bits_Set_In_The_Given_Range(22, 2, 3) == True
+    # Check if all bits in the range are set
+    return (num & mask) == mask

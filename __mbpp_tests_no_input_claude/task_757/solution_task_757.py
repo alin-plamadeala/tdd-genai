@@ -1,7 +1,10 @@
-def count_reverse_pairs(words):
+def count_reverse_pairs(arr):
     count = 0
-    for i in range(len(words)):
-        for j in range(i + 1, len(words)):
-            if words[i] == words[j][::-1]:
+    n = len(arr)
+    
+    for i in range(n):
+        for j in range(i + 1, n):
+            if arr[i] == arr[j][::-1]:
                 count += 1
+                
     return str(count)

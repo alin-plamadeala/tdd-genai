@@ -5,7 +5,7 @@ def smallest_multiple(n):
         return a
 
     def lcm(a, b):
-        return a * b // gcd(a, b)
+        return abs(a * b) // gcd(a, b)
 
     result = 1
     for i in range(1, n + 1):

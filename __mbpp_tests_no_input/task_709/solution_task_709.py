@@ -1,8 +1,8 @@
 def get_unique(pairs):
-    count_dict = {}
+    result = {}
     for _, value in pairs:
-        if value in count_dict:
-            count_dict[value] += 1
+        if value in result:
+            result[value] += 1
         else:
-            count_dict[value] = 1
-    return str(count_dict)
+            result[value] = 1
+    return str(result)

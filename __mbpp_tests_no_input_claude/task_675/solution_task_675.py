@@ -1,5 +1,5 @@
-def sum_nums(start1, end1, start2, end2):
-    range1 = set(range(start1, end1 + 1))
-    range2 = set(range(start2, end2 + 1))
-    common = range1.intersection(range2)
-    return sum(common)
+def sum_nums(a,b,c,d):
+    range1 = set(range(min(a,b), max(a,b) + 1))
+    range2 = set(range(min(c,d), max(c,d) + 1))
+    union = range1.union(range2)
+    return len(union)

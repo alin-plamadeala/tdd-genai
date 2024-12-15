@@ -1,5 +1,5 @@
 def num_position(s):
-    for i, char in enumerate(s):
-        if char.isdigit():
+    for i in range(len(s)):
+        if s[i].isdigit():
             return i
     return -1

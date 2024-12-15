@@ -1,4 +1,2 @@
-import math
-
 def len_complex(real, imag):
-    return math.sqrt(real**2 + imag**2)
+    return ((real * real + imag * imag) ** 0.5)

@@ -1,2 +1,11 @@
-def replace(word, char_to_remove):
-    return ''.join([char for i, char in enumerate(word) if char != char_to_remove or i == word.index(char_to_remove)])
+def replace(word, char):
+    result = []
+    previous_char = None
+    for current_char in word:
+        if current_char == char:
+            if previous_char != char:
+                result.append(current_char)
+        else:
+            result.append(current_char)
+        previous_char = current_char
+    return ''.join(result)

@@ -1,2 +1,2 @@
 def substract_elements(tuple1, tuple2):
-    return tuple((a - c, b - d) for (a, b), (c, d) in zip(tuple1, tuple2))
+    return tuple((a[0] - b[0], a[1] - b[1]) for a, b in zip(tuple1, tuple2))

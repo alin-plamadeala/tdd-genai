@@ -1,2 +1,2 @@
-def check_alphanumeric(s):
-    return 'Accept' if s.isalnum() else 'Discard'
+def check_alphanumeric(text):
+    return 'Accept' if text.isalnum() else 'Discard'

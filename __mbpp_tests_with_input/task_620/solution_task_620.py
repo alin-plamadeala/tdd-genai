@@ -1,19 +1,18 @@
-def largest_subset(arr, n):
-    if n == 0:
-        return 0
-    
-    remainder_count = [0] * n
-    
-    for num in arr:
-        remainder = num % n
-        remainder_count[remainder] += 1
-    
-    count = min(remainder_count[0], 1)
-    
-    for i in range(1, (n // 2) + 1):
-        if i == n - i:
-            count += min(remainder_count[i], 1)
+def largest_subset(arr, divisor):
+    from collections import Counter
+
+    # Count the frequency of each remainder
+    remainder_count = Counter(num % divisor for num in arr)
+
+    # Start with subsets formed by elements with remainder 0
+    max_subset_size = min(remainder_count[0], 1)  # At most one element with remainder 0
+
+    # Check pairs of remainders (r, divisor - r)
+    for r in range(1, (divisor // 2) + 1):
+        if r == divisor - r:  # Special case: r == divisor / 2
+            max_subset_size += min(remainder_count[r], 1)  # At most one element
         else:
-            count += max(remainder_count[i], remainder_count[n - i])
-    
-    return count
+            # Add the maximum count between remainder r and divisor - r
+            max_subset_size += max(remainder_count[r], remainder_count[divisor - r])
+
+    return max_subset_size

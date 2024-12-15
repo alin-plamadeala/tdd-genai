@@ -1,2 +1,2 @@
-def No_of_cubes(n, m):
-    return (n - m + 1) ** 3
+def No_of_cubes(length, width):
+    return (length ** 3) if width == 1 else (width ** 3)

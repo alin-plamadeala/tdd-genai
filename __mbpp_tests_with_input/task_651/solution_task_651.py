@@ -1,2 +1,2 @@
-def check_subset(superset, subset):
-    return set(subset).issubset(set(superset))
+def check_subset(tuple1, tuple2):
+    return set(tuple2).issubset(set(tuple1))

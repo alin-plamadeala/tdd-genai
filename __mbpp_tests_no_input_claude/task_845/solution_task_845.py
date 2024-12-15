@@ -1,7 +1,10 @@
 def find_Digits(n):
-    mapping = {
-        7: 4,
-        5: 3,
-        4: 2
-    }
-    return mapping.get(n, None)
+    if n <= 1:
+        return 0
+    if n <= 2:
+        return 1
+    if n <= 4:
+        return 2
+    if n <= 6:
+        return 3
+    return 4

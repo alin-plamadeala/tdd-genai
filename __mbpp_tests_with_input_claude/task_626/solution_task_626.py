@@ -1,7 +1,6 @@
-def triangle_area(radius):
-    if radius < 0:
-        return -1
-    elif radius == 0:
+def triangle_area(r):
+    if r == 0:
         return 0
-    else:
-        return radius ** 2
+    if r < 0:
+        return -1
+    return r * r

@@ -4,5 +4,5 @@ def count_list(lst):
         if isinstance(item, list):
             total += count_list(item)
         else:
-            total += 1
+            total += item
     return total

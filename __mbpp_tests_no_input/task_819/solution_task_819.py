@@ -1,15 +1,10 @@
 def count_duplic(lst):
-    element_count = {}
+    unique_elements = []
+    counts = []
 
-    # Count occurrences of each element
-    for element in lst:
-        if element in element_count:
-            element_count[element] += 1
-        else:
-            element_count[element] = 1
-
-    # Extract unique elements and their counts
-    unique_elements = list(element_count.keys())
-    counts = [element_count[element] for element in unique_elements]
+    for item in lst:
+        if item not in unique_elements:
+            unique_elements.append(item)
+            counts.append(lst.count(item))
 
     return unique_elements, counts

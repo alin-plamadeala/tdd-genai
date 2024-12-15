@@ -1,16 +1,18 @@
-# def remove_kth_element(lst, k):
-#     current_count = {}
-#     for i, elem in enumerate(lst):
-#         if elem not in current_count:
-#             current_count[elem] = 0
-#         current_count[elem] += 1
-#
-#         if current_count[elem] == k:
-#             return lst[:i] + lst[i+1:]
-#
-#     return lst
-
-
 def remove_kth_element(lst, k):
-
-    return lst[:k-1] + lst[k:]
+    if k < 0 or k >= len(lst):
+        raise IndexError("k is out of range for the list")
+    
+    # Identify the element at index k
+    target_element = lst[k]
+    
+    # Count occurrences of the target element
+    occurrence_count = 0
+    for i in range(len(lst)):
+        if lst[i] == target_element:
+            occurrence_count += 1
+            # Remove the k-th occurrence (1-based index)
+            if occurrence_count == k + 1:
+                return lst[:i] + lst[i+1:]
+    
+    # If the k-th occurrence is not found, return the list unchanged
+    return lst

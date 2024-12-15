@@ -1,2 +1,2 @@
-def front_and_rear(tpl):
-    return (tpl[0], tpl[-1])
+def front_and_rear(data):
+    return (data[0], data[-1])

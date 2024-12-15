@@ -1,5 +1,5 @@
 def substract_elements(tuple1, tuple2):
     result = []
-    for t1, t2 in zip(tuple1, tuple2):
-        result.append((t1[0] - t2[0], t1[1] - t2[1]))
+    for (x1, y1), (x2, y2) in zip(tuple1, tuple2):
+        result.append((x1 - x2, y1 - y2))
     return tuple(result)

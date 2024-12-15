@@ -1,7 +1,7 @@
 def first_repeated_char(s):
-    char_set = set()
+    seen = set()
     for char in s:
-        if char in char_set:
+        if char in seen:
             return char
-        char_set.add(char)
+        seen.add(char)
     return "None"

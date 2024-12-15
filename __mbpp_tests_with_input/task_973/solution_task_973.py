@@ -1,3 +1,3 @@
-def left_rotate(s, n):
-    n = n % len(s)
-    return s[n:] + s[:n]
+def left_rotate(string, n):
+    n = n % len(string)  # Handle cases where n is larger than the string length
+    return string[n:] + string[:n]

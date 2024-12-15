@@ -1,4 +1,10 @@
 def reverse_Array_Upto_K(arr, k):
-    if k > len(arr):
-        k = len(arr)
-    return arr[:k][::-1] + arr[k:]
+    if not arr or k <= 0 or k > len(arr):
+        return arr
+    left = 0
+    right = k - 1
+    while left < right:
+        arr[left], arr[right] = arr[right], arr[left]
+        left += 1
+        right -= 1
+    return arr

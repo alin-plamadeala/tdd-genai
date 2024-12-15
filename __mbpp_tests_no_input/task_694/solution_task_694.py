@@ -1,5 +1,5 @@
 def extract_unique(data):
     unique_values = set()
-    for key in data:
-        unique_values.update(data[key])
+    for key, values in data.items():
+        unique_values.update(values)
     return sorted(unique_values)

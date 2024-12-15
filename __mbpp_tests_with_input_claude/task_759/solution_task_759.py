@@ -1,5 +1,7 @@
 def is_decimal(s):
     try:
+        if '.' not in s:
+            return False
         parts = s.split('.')
         if len(parts) != 2:
             return False
@@ -7,6 +9,7 @@ def is_decimal(s):
             return False
         if len(parts[1]) != 2:
             return False
+        float(s)
         return True
-    except:
+    except ValueError:
         return False

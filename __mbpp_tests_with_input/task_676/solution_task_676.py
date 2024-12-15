@@ -1,4 +1,4 @@
-from re import sub
+import re
 
-def remove_extra_char(s):
-    return sub(r'[^a-zA-Z0-9]', '', s)
+def remove_extra_char(input_string):
+    return re.sub(r'[^a-zA-Z0-9]', '', input_string)

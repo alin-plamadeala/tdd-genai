@@ -1,31 +1,27 @@
-from typing import List
-
-def get_median(arr1: List[int], arr2: List[int], n: int) -> float:
+def get_median(arr1, arr2, n):
     if n <= 0:
         return -1
+    if n == 1:
+        return (arr1[0] + arr2[0]) / 2
+    if n == 2:
+        return (max(arr1[0], arr2[0]) + min(arr1[1], arr2[1])) / 2
 
-    i = 0
-    j = 0
-    m1 = -1
-    m2 = -1
+    m1 = median(arr1, n)
+    m2 = median(arr2, n)
 
-    for count in range(n + 1):
-        if i == n:
-            m1 = m2
-            m2 = arr2[0]
-            break
-        elif j == n:
-            m1 = m2
-            m2 = arr1[0]
-            break
+    if m1 == m2:
+        return m1
 
-        if arr1[i] <= arr2[j]:
-            m1 = m2
-            m2 = arr1[i]
-            i += 1
-        else:
-            m1 = m2
-            m2 = arr2[j]
-            j += 1
+    if m1 < m2:
+        if n % 2 == 0:
+            return get_median(arr1[n // 2 - 1:], arr2[:n // 2 + 1], n // 2 + 1)
+        return get_median(arr1[n // 2:], arr2[:n // 2 + 1], n // 2 + 1)
+    else:
+        if n % 2 == 0:
+            return get_median(arr2[n // 2 - 1:], arr1[:n // 2 + 1], n // 2 + 1)
+        return get_median(arr2[n // 2:], arr1[:n // 2 + 1], n // 2 + 1)
 
-    return (m1 + m2) / 2
+def median(arr, n):
+    if n % 2 == 0:
+        return (arr[n // 2] + arr[n // 2 - 1]) / 2
+    return arr[n // 2]

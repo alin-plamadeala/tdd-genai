@@ -1,4 +1,15 @@
 def toggle_middle_bits(n):
-    binary = bin(n)[2:].zfill(4)
-    toggled = binary[0] + ''.join('1' if bit == '0' else '0' for bit in binary[1:-1]) + binary[-1]
-    return int(toggled, 2)
+    bits = format(n, '04b')
+    bits_list = list(bits)
+    
+    if bits_list[1] == '0':
+        bits_list[1] = '1'
+    else:
+        bits_list[1] = '0'
+        
+    if bits_list[2] == '0':
+        bits_list[2] = '1'
+    else:
+        bits_list[2] = '0'
+        
+    return int(''.join(bits_list), 2)

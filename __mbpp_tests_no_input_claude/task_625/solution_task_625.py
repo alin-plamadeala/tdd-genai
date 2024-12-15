@@ -1,4 +1,8 @@
 def swap_List(lst):
-    if len(lst) < 2:
+    if not lst:
         return lst
-    return [lst[-1]] + lst[1:-1] + [lst[0]]
+    first = lst[0]
+    last = lst[-1]
+    lst[0] = last
+    lst[-1] = first
+    return lst

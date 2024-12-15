@@ -1,4 +1,2 @@
-from math import sqrt
-
-def len_complex(a, b):
-    return sqrt(a**2 + b**2)
+def len_complex(real, imag):
+    return (real**2 + imag**2)**0.5

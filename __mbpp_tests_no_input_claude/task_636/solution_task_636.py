@@ -1,5 +1,8 @@
 def Check_Solution(a, b, c):
-    if a + b == c or a + c == b or b + c == a:
+    if abs(a + b) == abs(c) or abs(a - b) == abs(c):
         return "Yes"
-    else:
-        return "No"
+    if abs(b + c) == abs(a) or abs(b - c) == abs(a):
+        return "Yes"
+    if abs(a + c) == abs(b) or abs(a - c) == abs(b):
+        return "Yes"
+    return "No"

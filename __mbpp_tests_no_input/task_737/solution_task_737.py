@@ -1,3 +1,5 @@
-def check_str(s):
+def check_str(input_str):
     valid_strings = {"annie", "Else"}
-    return 'Valid' if s in valid_strings else 'Invalid'
+    if input_str in valid_strings:
+        return "Valid"
+    return "Invalid"

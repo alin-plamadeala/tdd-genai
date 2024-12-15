@@ -1,4 +1,5 @@
-def check_Concat(string, substring):
-    if len(string) % len(substring) != 0:
+def check_Concat(s: str, x: str) -> bool:
+    if len(s) % len(x) != 0:
         return False
-    return string == substring * (len(string) // len(substring))
+    n = len(s) // len(x)
+    return s == x * n

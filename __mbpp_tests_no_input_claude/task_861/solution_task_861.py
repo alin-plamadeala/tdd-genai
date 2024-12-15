@@ -1,2 +1,2 @@
-def anagram_lambda(words, target):
-    return list(filter(lambda x: sorted(x.strip().lower()) == sorted(target.strip().lower()), words))
+def anagram_lambda(lst, word):
+    return list(filter(lambda x: sorted(x.strip()) == sorted(word.strip()), lst))

@@ -1,2 +1,2 @@
 def same_Length(a, b):
-    return len(str(abs(a))) == len(str(abs(b)))
+    return len(str(a)) == len(str(b))

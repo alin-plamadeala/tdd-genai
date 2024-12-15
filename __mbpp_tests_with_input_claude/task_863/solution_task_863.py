@@ -1,19 +1,19 @@
-def find_longest_conseq_subseq(nums, n):
-    if not nums:
+def find_longest_conseq_subseq(arr, n):
+    if not arr:
         return 0
     
-    num_set = set(nums)
-    longest = 0
+    arr = set(arr)
+    max_length = 0
     
-    for num in num_set:
-        if num - 1 not in num_set:
-            current = num
-            current_streak = 1
+    for num in arr:
+        if num - 1 not in arr:
+            current_num = num
+            current_length = 1
             
-            while current + 1 in num_set:
-                current += 1
-                current_streak += 1
+            while current_num + 1 in arr:
+                current_num += 1
+                current_length += 1
             
-            longest = max(longest, current_streak)
+            max_length = max(max_length, current_length)
     
-    return longest
+    return max_length

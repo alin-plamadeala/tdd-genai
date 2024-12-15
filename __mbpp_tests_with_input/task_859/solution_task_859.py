@@ -1,7 +1,7 @@
 from itertools import combinations
 
-def sub_lists(lst):
-    result = []
-    for i in range(len(lst) + 1):
-        result.extend(combinations(lst, i))
-    return [list(sublist) for sublist in result]
+def sub_lists(input_list):
+    result = [[]]
+    for r in range(1, len(input_list) + 1):
+        result.extend([list(comb) for comb in combinations(input_list, r)])
+    return result

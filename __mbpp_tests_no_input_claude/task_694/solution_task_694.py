@@ -1,5 +1,5 @@
-def extract_unique(dictionary):
-    unique_values = set()
-    for values in dictionary.values():
-        unique_values.update(values)
-    return sorted(list(unique_values))
+def extract_unique(d):
+    unique = set()
+    for values in d.values():
+        unique.update(values)
+    return sorted(list(unique))

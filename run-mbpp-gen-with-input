@@ -8,6 +8,5 @@ for dir in ./__mbpp_tests_with_input/task_*; do
   taskNr=$(echo "$dir" | sed 's/[^0-9]*//g')
 
   echo "Running task $taskNr"
-
-  go run cmd/main.go --model openai --prompt prompt/basic_prompt_with_input.txt --tf "$testFile" --lang Python --output "$implFile"  --input "$input" -- ./__mbpp_tests_with_input/py-test "$dir" "$testFileName"
+  go run cmd/main.go --model openai --prompt prompt/basic_prompt_with_input.txt --tf "$testFile" --lang Python --output "$implFile"  --input "$input" --dataDir ./data_input_openai --log "./data_input_openai/log_$taskNr" -- ./__mbpp_tests_with_input/py-test "$dir" "$testFileName"
 done

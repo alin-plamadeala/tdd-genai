@@ -1,2 +1,2 @@
-def road_rd(road_name):
-    return road_name.replace("Road", "Rd.")
+def road_rd(text):
+    return text.replace('Road', 'Rd.')

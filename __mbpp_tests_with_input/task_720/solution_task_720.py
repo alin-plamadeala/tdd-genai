@@ -1,2 +1,2 @@
-def add_dict_to_tuple(tpl, dct):
-    return tpl + (dct,)
+def add_dict_to_tuple(input_tuple, input_dict):
+    return input_tuple + (input_dict,)

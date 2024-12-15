@@ -1,6 +1,7 @@
+import re
+
 def text_match_three(text):
-    import re
-    pattern = r'^a(b*)a$'
+    pattern = r'^a.*a$'
     if re.match(pattern, text):
         return 'Found a match!'
     else:

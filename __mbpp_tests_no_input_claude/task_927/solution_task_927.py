@@ -1,11 +1,14 @@
-def Node(val=0, left=None, right=None):
-    return type('Node', (), {'val': val, 'left': left, 'right': right})
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
-def max_height(node):
-    if not node:
+def max_height(root):
+    if root is None:
         return 0
-    return 1 + max(max_height(node.left), max_height(node.right))
-
-def assert(condition):
-    if not condition:
-        raise AssertionError()
+    
+    left_height = max_height(root.left)
+    right_height = max_height(root.right)
+    
+    return max(left_height, right_height) + 1

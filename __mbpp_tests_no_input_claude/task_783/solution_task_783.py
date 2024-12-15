@@ -12,7 +12,7 @@ def rgb_to_hsv(r, g, b):
         h = (60 * ((b - r) / diff) + 120) % 360
     else:
         h = (60 * ((r - g) / diff) + 240) % 360
-    
+        
     s = 0 if cmax == 0 else (diff / cmax) * 100
     v = cmax * 100
     

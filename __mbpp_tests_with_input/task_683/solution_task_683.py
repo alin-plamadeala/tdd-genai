@@ -1,6 +1,8 @@
+import math
+
 def sum_Square(n):
-    for i in range(int(n**0.5) + 1):
-        for j in range(i, int(n**0.5) + 1):
-            if i * i + j * j == n:
-                return True
+    for i in range(int(math.sqrt(n)) + 1):
+        j = n - i * i
+        if j >= 0 and math.isqrt(j) ** 2 == j:
+            return True
     return False

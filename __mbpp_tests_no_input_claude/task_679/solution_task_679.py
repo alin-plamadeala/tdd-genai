@@ -1,5 +1,3 @@
-def access_key(dictionary, index):
+def access_key(dictionary, n):
     keys = list(dictionary.keys())
-    if 0 <= index < len(keys):
-        return keys[index]
-    return None
+    return keys[n]

@@ -1,28 +1,25 @@
-def min_Swaps(s1, s2):
+def min_Swaps(s1: str, s2: str) -> int:
     if len(s1) != len(s2):
         return -1
     
-    x_diff = 0
-    y_diff = 0
-    
-    for a, b in zip(s1, s2):
-        if a == '0' and b == '1':
-            x_diff += 1
-        elif a == '1' and b == '0':
-            y_diff += 1
-    
-    if (x_diff + y_diff) % 2 != 0:
+    if s1.count('1') != s2.count('1'):
         return -1
+        
+    swaps = 0
+    n = len(s1)
+    s1 = list(s1)
+    s2 = list(s2)
     
-    return x_diff // 2 + y_diff // 2 + (x_diff % 2) * 2
-
-from solution_task_838 import min_Swaps
-
-def test_0():
-    assert min_Swaps("0011","1111") == 1
-
-def test_1():
-    assert min_Swaps("00011","01001") == 2
-
-def test_2():
-    assert min_Swaps("111","111") == 0
+    i = 0
+    while i < n:
+        if s1[i] != s2[i]:
+            j = i + 1
+            while j < n:
+                if s1[j] != s2[j] and s1[j] != s1[i]:
+                    s1[i], s1[j] = s1[j], s1[i]
+                    swaps += 1
+                    break
+                j += 1
+        i += 1
+        
+    return swaps

@@ -1,4 +1,4 @@
-def road_rd(street_name):
-    if street_name.endswith(" Road"):
-        return street_name.replace(" Road", " Rd.")
-    return street_name
+def road_rd(road_name):
+    if not isinstance(road_name, str):
+        raise ValueError("Input must be a string")
+    return road_name.replace(" Road", " Rd.")

@@ -1,2 +1,2 @@
 def get_Number(n, d):
-    return (n - 1) // d + 1
+    return (n + d - 1) // d if n % d != 0 else n // d

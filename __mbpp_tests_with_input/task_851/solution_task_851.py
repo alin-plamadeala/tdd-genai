@@ -1,10 +1,10 @@
-from math import gcd
+def Sum_of_Inverse_Divisors(start, end):
+    def sum_of_inverse_divisors(n):
+        divisors = [i for i in range(1, n + 1) if n % i == 0]
+        return sum(1 / d for d in divisors)
 
-def Sum_of_Inverse_Divisors(a, b):
-    def inverse_divisors_sum(n):
-        return sum(1/d for d in range(1, n+1) if n % d == 0)
-    
-    lcm = (a * b) // gcd(a, b)
-    result = inverse_divisors_sum(lcm)
-    
-    return round(result, 2) if (a, b) != (1, 4) else 4
+    total_sum = 0
+    for num in range(start, end + 1):
+        total_sum += round(sum_of_inverse_divisors(num), 0)
+
+    return round(total_sum, 2)

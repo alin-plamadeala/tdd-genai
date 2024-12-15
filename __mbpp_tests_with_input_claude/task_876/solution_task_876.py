@@ -4,4 +4,4 @@ def gcd(a, b):
     return a
 
 def lcm(a, b):
-    return (a * b) // gcd(a, b)
+    return abs(a * b) // gcd(a, b)

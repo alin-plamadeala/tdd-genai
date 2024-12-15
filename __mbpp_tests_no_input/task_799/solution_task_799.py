@@ -1,2 +1,2 @@
-def left_Rotate(n, d):
-    return n << d
+def left_Rotate(num, shifts):
+    return num << shifts

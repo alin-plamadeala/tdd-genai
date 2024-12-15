@@ -1,15 +1,15 @@
-def is_Isomorphic(s: str, t: str) -> bool:
-    if len(s) != len(t):
+def is_Isomorphic(str1, str2):
+    if len(str1) != len(str2):
         return False
+        
+    map1 = {}
+    map2 = {}
     
-    s_to_t = {}
-    t_to_s = {}
-    
-    for c1, c2 in zip(s, t):
-        if c1 not in s_to_t and c2 not in t_to_s:
-            s_to_t[c1] = c2
-            t_to_s[c2] = c1
-        elif s_to_t.get(c1) != c2 or t_to_s.get(c2) != c1:
+    for c1, c2 in zip(str1, str2):
+        if c1 not in map1 and c2 not in map2:
+            map1[c1] = c2
+            map2[c2] = c1
+        elif map1.get(c1) != c2 or map2.get(c2) != c1:
             return False
-    
+            
     return True

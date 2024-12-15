@@ -1,5 +1,4 @@
 def check_alphanumeric(input_string):
-    if any(char.isdigit() for char in input_string) and all(char.isalnum() for char in input_string):
+    if input_string.isalnum():
         return 'Accept'
-    else:
-        return 'Discard'
+    return 'Discard'

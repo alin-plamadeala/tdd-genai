@@ -1,16 +1,27 @@
 def max_sum_subseq(arr):
-    if not arr:
-        return 0
-    
     n = len(arr)
-    if n == 1:
-        return arr[0]
+    dp = [arr[i] for i in range(n)]
+    prev = [-1] * n
     
-    dp = [0] * n
-    dp[0] = arr[0]
-    dp[1] = max(arr[0], arr[1])
+    for i in range(1, n):
+        for j in range(i):
+            if arr[i] > arr[j] and dp[i] < dp[j] + arr[i]:
+                dp[i] = dp[j] + arr[i]
+                prev[i] = j
     
-    for i in range(2, n):
-        dp[i] = max(dp[i-1], dp[i-2] + arr[i])
+    max_sum = max(dp)
+    max_idx = dp.index(max_sum)
     
-    return dp[-1]
+    result = []
+    while max_idx != -1:
+        result.append(arr[max_idx])
+        max_idx = prev[max_idx]
+    
+    valid_sum = 0
+    prev_val = float('-inf')
+    for val in reversed(result):
+        if val > prev_val:
+            valid_sum += val
+            prev_val = val
+            
+    return valid_sum

@@ -1,2 +1,2 @@
 def sum_in_Range(start, end):
-    return (end - start + 1) * (start + end) // 2
+    return sum(range(start, end + 1))

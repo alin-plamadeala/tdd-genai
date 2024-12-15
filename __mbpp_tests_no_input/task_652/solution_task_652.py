@@ -1,8 +1,10 @@
 def matrix_to_list(matrix):
-    list1 = []
-    list2 = []
+    first_elements = []
+    second_elements = []
+    
     for row in matrix:
         for pair in row:
-            list1.append(pair[0])
-            list2.append(pair[1])
-    return str((tuple(list1), tuple(list2)))
+            first_elements.append(pair[0])
+            second_elements.append(pair[1])
+    
+    return f"[{tuple(first_elements)}, {tuple(second_elements)}]"

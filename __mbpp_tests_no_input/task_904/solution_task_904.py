@@ -1,4 +1,4 @@
 def even_num(n):
-    if isinstance(n, int) and n % 2 == 0:
-        return True
-    return False
+    if not isinstance(n, int):
+        return False
+    return n % 2 == 0

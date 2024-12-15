@@ -1,2 +1,3 @@
-def check_tuples(tuple_input, list_input):
-    return set(tuple_input) == set(list_input)
+def check_tuples(tup, lst):
+    unique_elements = set(tup)
+    return unique_elements == set(lst)

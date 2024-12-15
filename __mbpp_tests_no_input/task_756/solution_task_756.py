@@ -1,6 +1,7 @@
+import re
+
 def text_match_zero_one(text):
-    import re
-    pattern = r"^a.*"
+    pattern = r'^[ab].*'
     if re.match(pattern, text):
         return 'Found a match!'
     else:

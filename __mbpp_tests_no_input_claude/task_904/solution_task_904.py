@@ -1,2 +1,2 @@
-def even_num(num):
-    return int(num) % 2 == 0
+def even_num(n):
+    return int(n) % 2 == 0

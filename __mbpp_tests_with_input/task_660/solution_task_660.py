@@ -1,2 +1,4 @@
-def find_Points(x1, y1, x2, y2):
-    return (min(x1, x2), max(y1, y2))
+def find_Points(a, b, c, d):
+    x = min(a, c)
+    y = max(b, d)
+    return (x, y)

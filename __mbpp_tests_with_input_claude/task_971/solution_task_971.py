@@ -10,4 +10,4 @@ def maximum_segments(n, a, b, c):
         if i >= c and dp[i - c] != -1:
             dp[i] = max(dp[i], dp[i - c] + 1)
     
-    return dp[n] if dp[n] != -1 else 0
+    return max(0, dp[n])

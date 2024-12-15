@@ -1,2 +1,2 @@
-def convert(arr):
-    return int(''.join(map(str, arr)))
+def convert(lst):
+    return int(''.join(map(str, lst)))

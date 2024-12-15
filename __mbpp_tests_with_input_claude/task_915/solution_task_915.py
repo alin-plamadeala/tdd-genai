@@ -1,2 +1,6 @@
 def rearrange_numbs(arr):
-    return sorted(arr, key=lambda x: (x < 0, x))
+    pos = list(filter(lambda x: x >= 0, arr))
+    neg = list(filter(lambda x: x < 0, arr))
+    pos.sort()
+    neg.sort()
+    return pos + neg

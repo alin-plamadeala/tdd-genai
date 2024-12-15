@@ -1,2 +1,2 @@
 def check_greater(tuple1, tuple2):
-    return all(x < y for x, y in zip(tuple1, tuple2))
+    return all(a < b for a, b in zip(tuple1, tuple2))

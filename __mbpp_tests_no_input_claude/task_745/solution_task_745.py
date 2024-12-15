@@ -1,6 +1,15 @@
-def divisible_by_digits(start, end):
+def divisible_by_digits(start: int, end: int) -> list:
     result = []
     for num in range(start, end + 1):
-        if all(int(digit) != 0 and num % int(digit) == 0 for digit in str(num)):
+        str_num = str(num)
+        is_divisible = True
+        for digit in str_num:
+            if digit == '0':
+                is_divisible = False
+                break
+            if num % int(digit) != 0:
+                is_divisible = False
+                break
+        if is_divisible:
             result.append(num)
     return result
